@@ -1,15 +1,21 @@
 import pandas as pd
-from clean.clean_data import clean_raw_data
-from validate.validate_data import validate_data
-from transform.feature_engineering import engineer_features
-from load.load_data import select_model_ready_rows
+from pathlib import Path
+
+from etl_pipeline.clean.clean_data import clean_raw_data
+from etl_pipeline.validate.validate_data import validate_data
+from etl_pipeline.transform.feature_engineering import engineer_features
+from etl_pipeline.load.load_data import select_model_ready_rows
+
+BASE_DIR = Path(__file__).resolve().parent
+RAW_DIR = BASE_DIR / "raw"
 
 REFERENCE_TIME = pd.Timestamp("2024-10-03 12:00")
 
 def run_pipeline(csv_path: str):
     print(f"\nRunning ETL for: {csv_path}")
 
-    df_raw = pd.read_csv(csv_path)
+    df_raw = pd.read_csv(RAW_DIR / csv_path)
+
     print(f"Raw rows: {len(df_raw)}")
 
     df_clean = clean_raw_data(df_raw)
@@ -25,5 +31,5 @@ def run_pipeline(csv_path: str):
 
 
 if __name__ == "__main__":
-    run_pipeline("raw/generic_food_data.csv")
-    run_pipeline("raw/fssai_inspired_food_data.csv")
+    run_pipeline("generic_food_data.csv")
+    run_pipeline("fssai_inspired_food_data.csv")
