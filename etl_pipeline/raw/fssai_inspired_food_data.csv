@@ -1,0 +1,151 @@
+product_id,product_category,manufacture_date,expiry_date,expiry_type,storage_requirement,ingredient_text,declared_allergens,compliance_status
+F001,Dairy,2025-12-01,2025-12-06,use_by,Chilled,"Milk, stabilisers","Milk",Declared
+F002,Bakery,2025-11-28,2025-12-05,best_before,Ambient,"Wheat flour, sugar, yeast","Gluten",Declared
+F003,Ready-to-Eat,2025-12-04,2025-12-06,use_by,Chilled,"Rice, vegetables, spices","",Missing
+F004,Snacks,2025-11-20,2025-12-20,best_before,Ambient,"Peanuts, oil","Peanuts",Declared
+F005,Frozen Foods,2025-11-15,2026-02-15,best_before,Frozen,"Paneer, salt","Milk",Declared
+F006,Dairy,2025-12-02,2025-12-07,use_by,Chilled,"Yoghurt, honey, fruit","Milk",Declared
+F007,Bakery,2025-11-29,2025-12-06,best_before,Ambient,"Rye flour, water, salt","Gluten",Declared
+F008,Ready-to-Eat,2025-12-03,2025-12-05,use_by,Chilled,"Chicken, soy sauce, noodles","Soy, Gluten",Declared
+F009,Snacks,2025-11-18,2025-12-18,best_before,Ambient,"Cashews, salt, spices","",Missing
+F010,Frozen Foods,2025-11-10,2026-02-10,best_before,Frozen,"Fish, breadcrumbs","Fish, Gluten",Declared
+F011,Dairy,2025-12-03,2025-12-08,use_by,Chilled,"Cream, sugar, vanilla","Milk",Declared
+F012,Bakery,2025-11-30,2025-12-07,best_before,Ambient,"Wheat flour, eggs, butter","Gluten, Eggs, Milk",Declared
+F013,Ready-to-Eat,2025-12-05,2025-12-07,use_by,Chilled,"Beef, potatoes, gravy","",Missing
+F014,Snacks,2025-11-25,2025-12-25,best_before,Ambient,"Almonds, chocolate","Tree Nuts, Milk",Declared
+F015,Frozen Foods,2025-11-12,2026-02-12,best_before,Frozen,"Shrimp, garlic butter","Crustaceans, Milk",Declared
+F016,Dairy,2025-12-04,2025-12-09,use_by,Chilled,"Milk, cocoa powder","Milk",Declared
+F017,Bakery,2025-12-01,2025-12-08,best_before,Ambient,"Oats, honey, nuts","Tree Nuts",Declared
+F018,Ready-to-Eat,2025-12-06,2025-12-08,use_by,Chilled,"Tofu, broccoli, sesame","Soy, Sesame",Declared
+F019,Snacks,2025-11-22,2025-12-22,best_before,Ambient,"Corn, palm oil, salt","",Declared
+F020,Frozen Foods,2025-11-08,2026-02-08,best_before,Frozen,"Mixed vegetables, salt","",Declared
+F021,Dairy,2025-12-05,2025-12-10,use_by,Chilled,"Cheese, cultures, salt","Milk",Declared
+F022,Bakery,2025-12-02,2025-12-09,best_before,Ambient,"Wheat flour, raisins, milk","Gluten, Milk",Declared
+F023,Ready-to-Eat,2025-12-07,2025-12-09,use_by,Chilled,"Pork, rice, soy beans","Soy",Declared
+F024,Snacks,2025-11-26,2025-12-26,best_before,Ambient,"Walnuts, dried cranberries","Tree Nuts",Declared
+F025,Frozen Foods,2025-11-14,2026-02-14,best_before,Frozen,"Chicken wings, buffalo sauce","",Missing
+F026,Dairy,2025-12-06,2025-12-11,use_by,Chilled,"Butter, salt","Milk",Declared
+F027,Bakery,2025-12-03,2025-12-10,best_before,Ambient,"Cornmeal, sugar, eggs","Eggs",Declared
+F028,Ready-to-Eat,2025-12-08,2025-12-10,use_by,Chilled,"Lentils, onions, spices","",Declared
+F029,Snacks,2025-11-27,2025-12-27,best_before,Ambient,"Pistachios, sea salt","Tree Nuts",Declared
+F030,Frozen Foods,2025-11-16,2026-02-16,best_before,Frozen,"Pizza dough, cheese, tomato","Gluten, Milk",Declared
+F031,Dairy,2025-12-07,2025-12-12,use_by,Chilled,"Milk, vitamin D","Milk",Declared
+F032,Bakery,2025-12-04,2025-12-11,best_before,Ambient,"Sourdough starter, wheat","Gluten",Declared
+F033,Ready-to-Eat,2025-12-09,2025-12-11,use_by,Chilled,"Egg salad, mayo","Eggs",Declared
+F034,Snacks,2025-11-28,2025-12-28,best_before,Ambient,"Potato, oil, bbq seasoning","",Declared
+F035,Frozen Foods,2025-11-18,2026-02-18,best_before,Frozen,"Ice cream, chocolate chips","Milk, Soy",Declared
+F036,Dairy,2025-12-08,2025-12-13,use_by,Chilled,"Goat cheese, salt","Milk",Declared
+F037,Bakery,2025-12-05,2025-12-12,best_before,Ambient,"Flour, milk, butter","Gluten, Milk",Declared
+F038,Ready-to-Eat,2025-12-10,2025-12-12,use_by,Chilled,"Salmon, quinoa, lemon","Fish",Declared
+F039,Snacks,2025-11-29,2025-12-29,best_before,Ambient,"Peanuts, caramel","Peanuts, Milk",Declared
+F040,Frozen Foods,2025-11-20,2026-02-20,best_before,Frozen,"Potato wedges, oil","",Declared
+F041,Dairy,2025-12-09,2025-12-14,use_by,Chilled,"Milk, bacteria cultures","Milk",Declared
+F042,Bakery,2025-12-06,2025-12-13,best_before,Ambient,"Wheat, yeast, water","Gluten",Declared
+F043,Ready-to-Eat,2025-12-11,2025-12-13,use_by,Chilled,"Hummus, pine nuts","Tree Nuts, Sesame",Declared
+F044,Snacks,2025-11-30,2025-12-30,best_before,Ambient,"Sunflower seeds, salt","",Declared
+F045,Frozen Foods,2025-11-22,2026-02-22,best_before,Frozen,"Beef patties, spices","",Declared
+F046,Dairy,2025-12-10,2025-12-15,use_by,Chilled,"Milk, strawberry puree","Milk",Declared
+F047,Bakery,2025-12-07,2025-12-14,best_before,Ambient,"Wheat flour, dark chocolate","Gluten, Soy",Declared
+F048,Ready-to-Eat,2025-12-12,2025-12-14,use_by,Chilled,"Pasta, cheese sauce","Gluten, Milk",Declared
+F049,Snacks,2025-12-01,2025-12-31,best_before,Ambient,"Brazil nuts, salt","Tree Nuts",Declared
+F050,Frozen Foods,2025-11-24,2026-02-24,best_before,Frozen,"Spinach, cream sauce","Milk",Declared
+F051,Dairy,2025-12-11,2025-12-16,use_by,Chilled,"Condensed milk, sugar","Milk",Declared
+F052,Bakery,2025-12-08,2025-12-15,best_before,Ambient,"Barley, wheat, yeast","Gluten",Declared
+F053,Ready-to-Eat,2025-12-13,2025-12-15,use_by,Chilled,"Chicken Caesar salad","Milk, Eggs, Fish, Gluten",Declared
+F054,Snacks,2025-12-02,2026-01-02,best_before,Ambient,"Pretzels, salt","Gluten",Declared
+F055,Frozen Foods,2025-11-26,2026-02-26,best_before,Frozen,"Peas, carrots, corn","",Declared
+F056,Dairy,2025-12-12,2025-12-17,use_by,Chilled,"Probiotic milk","Milk",Declared
+F057,Bakery,2025-12-09,2025-12-16,best_before,Ambient,"Rye bread, seeds","Gluten",Declared
+F058,Ready-to-Eat,2025-12-14,2025-12-16,use_by,Chilled,"Turkey wrap, tortilla","Gluten",Declared
+F059,Snacks,2025-12-03,2026-01-03,best_before,Ambient,"Rice crackers, soy seasoning","Soy",Declared
+F060,Frozen Foods,2025-11-28,2026-02-28,best_before,Frozen,"Burrito, beans, cheese","Gluten, Milk",Declared
+F061,Dairy,2025-12-13,2025-12-18,use_by,Chilled,"Cottage cheese","Milk",Declared
+F062,Bakery,2025-12-10,2025-12-17,best_before,Ambient,"Bagels, sesame seeds","Gluten, Sesame",Declared
+F063,Ready-to-Eat,2025-12-15,2025-12-17,use_by,Chilled,"Sushi, tuna, rice","Fish",Declared
+F064,Snacks,2025-12-04,2026-01-04,best_before,Ambient,"Popcorn, butter","Milk",Declared
+F065,Frozen Foods,2025-11-30,2026-02-28,best_before,Frozen,"Meatballs, soy protein","Soy",Declared
+F066,Dairy,2025-12-14,2025-12-19,use_by,Chilled,"Almond milk alternative","Tree Nuts",Declared
+F067,Bakery,2025-12-11,2025-12-18,best_before,Ambient,"Muffins, walnuts","Gluten, Tree Nuts",Declared
+F068,Ready-to-Eat,2025-12-16,2025-12-18,use_by,Chilled,"Pesto pasta, pine nuts","Gluten, Tree Nuts, Milk",Declared
+F069,Snacks,2025-12-05,2026-01-05,best_before,Ambient,"Fruit leather, apple","",Declared
+F070,Frozen Foods,2025-12-01,2026-03-01,best_before,Frozen,"Lasagna, beef, pasta","Gluten, Milk",Declared
+F071,Dairy,2025-12-15,2025-12-20,use_by,Chilled,"Whipping cream","Milk",Declared
+F072,Bakery,2025-12-12,2025-12-19,best_before,Ambient,"Donuts, glaze","Gluten, Eggs, Milk",Declared
+F073,Ready-to-Eat,2025-12-17,2025-12-19,use_by,Chilled,"Shrimp cocktail","Crustaceans",Declared
+F074,Snacks,2025-12-06,2026-01-06,best_before,Ambient,"Peanut butter crackers","Peanuts, Gluten",Declared
+F075,Frozen Foods,2025-12-02,2026-03-02,best_before,Frozen,"Waffles, wheat flour","Gluten, Eggs",Declared
+F076,Dairy,2025-12-16,2025-12-21,use_by,Chilled,"Kefir, milk","Milk",Declared
+F077,Bakery,2025-12-13,2025-12-20,best_before,Ambient,"Croissants, butter","Gluten, Milk",Declared
+F078,Ready-to-Eat,2025-12-18,2025-12-20,use_by,Chilled,"Quiche, spinach, eggs","Eggs, Milk, Gluten",Declared
+F079,Snacks,2025-12-07,2026-01-07,best_before,Ambient,"Hazelnuts, cocoa","Tree Nuts",Declared
+F080,Frozen Foods,2025-12-03,2026-03-03,best_before,Frozen,"Chicken nuggets","Gluten",Declared
+F081,Dairy,2025-12-17,2025-12-22,use_by,Chilled,"Skim milk","Milk",Declared
+F082,Bakery,2025-12-14,2025-12-21,best_before,Ambient,"White bread, yeast","Gluten",Declared
+F083,Ready-to-Eat,2025-12-19,2025-12-21,use_by,Chilled,"Greek salad, feta","Milk",Declared
+F084,Snacks,2025-12-08,2026-01-08,best_before,Ambient,"Beef jerky, soy sauce","Soy",Declared
+F085,Frozen Foods,2025-12-04,2026-03-04,best_before,Frozen,"Sorbet, raspberry","",Declared
+F086,Dairy,2025-12-18,2025-12-23,use_by,Chilled,"Sour cream","Milk",Declared
+F087,Bakery,2025-12-15,2025-12-22,best_before,Ambient,"Pumpernickel bread","Gluten",Declared
+F088,Ready-to-Eat,2025-12-20,2025-12-22,use_by,Chilled,"Pad Thai, peanuts","Peanuts, Eggs",Declared
+F089,Snacks,2025-12-09,2026-01-09,best_before,Ambient,"Corn chips, lime","",Declared
+F090,Frozen Foods,2025-12-05,2026-03-05,best_before,Frozen,"Mixed berries","",Declared
+F091,Dairy,2025-12-19,2025-12-24,use_by,Chilled,"Evaporated milk","Milk",Declared
+F092,Bakery,2025-12-16,2025-12-23,best_before,Ambient,"Bagel, plain","Gluten",Declared
+F093,Ready-to-Eat,2025-12-21,2025-12-23,use_by,Chilled,"Cobb salad, egg","Eggs, Milk",Declared
+F094,Snacks,2025-12-10,2026-01-10,best_before,Ambient,"Macadamia nuts","Tree Nuts",Declared
+F095,Frozen Foods,2025-12-06,2026-03-06,best_before,Frozen,"Fries, potato","",Declared
+F096,Dairy,2025-12-20,2025-12-25,use_by,Chilled,"Parmesan cheese","Milk",Declared
+F097,Bakery,2025-12-17,2025-12-24,best_before,Ambient,"Whole wheat rolls","Gluten",Declared
+F098,Ready-to-Eat,2025-12-22,2025-12-24,use_by,Chilled,"Beef stir fry, soy","Soy",Declared
+F099,Snacks,2025-12-11,2026-01-11,best_before,Ambient,"Trail mix, nuts","Tree Nuts, Peanuts",Declared
+F100,Frozen Foods,2025-12-07,2026-03-07,best_before,Frozen,"Apple pie, wheat","Gluten",Declared
+F101,Dairy,2025-12-21,2025-12-26,use_by,Chilled,"Ghee, milk fat","Milk",Declared
+F102,Bakery,2025-12-18,2025-12-25,best_before,Ambient,"Brioche, eggs, butter","Gluten, Eggs, Milk",Declared
+F103,Ready-to-Eat,2025-12-23,2025-12-25,use_by,Chilled,"Burrito, soy crumbles","Gluten, Soy",Declared
+F104,Snacks,2025-12-12,2026-01-12,best_before,Ambient,"Granola bar, oats, milk","Gluten, Milk",Declared
+F105,Frozen Foods,2025-12-08,2026-03-08,best_before,Frozen,"Onion rings, flour","Gluten",Declared
+F106,Dairy,2025-12-22,2025-12-27,use_by,Chilled,"Soy milk","Soy",Declared
+F107,Bakery,2025-12-19,2025-12-26,best_before,Ambient,"French bread","Gluten",Declared
+F108,Ready-to-Eat,2025-12-24,2025-12-26,use_by,Chilled,"Falafel, tahini","Sesame",Declared
+F109,Snacks,2025-12-13,2026-01-13,best_before,Ambient,"Sesame sticks","Sesame, Gluten",Declared
+F110,Frozen Foods,2025-12-09,2026-03-09,best_before,Frozen,"Hash browns","",Declared
+F111,Dairy,2025-12-23,2025-12-28,use_by,Chilled,"Quark cheese","Milk",Declared
+F112,Bakery,2025-12-20,2025-12-27,best_before,Ambient,"English muffins","Gluten",Declared
+F113,Ready-to-Eat,2025-12-25,2025-12-27,use_by,Chilled,"Butter chicken","Milk",Declared
+F114,Snacks,2025-12-14,2026-01-14,best_before,Ambient,"Pecans, honey","Tree Nuts",Declared
+F115,Frozen Foods,2025-12-10,2026-03-10,best_before,Frozen,"Veggie burger, soy","Soy, Gluten",Declared
+F116,Dairy,2025-12-24,2025-12-29,use_by,Chilled,"Buttermilk","Milk",Declared
+F117,Bakery,2025-12-21,2025-12-28,best_before,Ambient,"Flatbread","Gluten",Declared
+F118,Ready-to-Eat,2025-12-26,2025-12-28,use_by,Chilled,"Chicken wrap, flour","Gluten",Declared
+F119,Snacks,2025-12-15,2026-01-15,best_before,Ambient,"Plantain chips","",Declared
+F120,Frozen Foods,2025-12-11,2026-03-11,best_before,Frozen,"Spring rolls, shrimp","Crustaceans, Gluten",Declared
+F121,Dairy,2025-12-25,2025-12-30,use_by,Chilled,"Mozzarella","Milk",Declared
+F122,Bakery,2025-12-22,2025-12-29,best_before,Ambient,"Dinner rolls","Gluten",Declared
+F123,Ready-to-Eat,2025-12-27,2025-12-29,use_by,Chilled,"Antipasto, cheese","Milk",Declared
+F124,Snacks,2025-12-16,2026-01-16,best_before,Ambient,"Dried mango","",Declared
+F125,Frozen Foods,2025-12-12,2026-03-12,best_before,Frozen,"Fish sticks","Fish, Gluten",Declared
+F126,Dairy,2025-12-26,2025-12-31,use_by,Chilled,"Ricotta","Milk",Declared
+F127,Bakery,2025-12-23,2025-12-30,best_before,Ambient,"Breadsticks","Gluten",Declared
+F128,Ready-to-Eat,2025-12-28,2025-12-30,use_by,Chilled,"Potato salad, egg","Eggs",Declared
+F129,Snacks,2025-12-17,2026-01-17,best_before,Ambient,"Peanut brittle","Peanuts",Declared
+F130,Frozen Foods,2025-12-13,2026-03-13,best_before,Frozen,"Chicken pot pie","Gluten, Milk",Declared
+F131,Dairy,2025-12-27,2026-01-01,use_by,Chilled,"Mascarpone","Milk",Declared
+F132,Bakery,2025-12-24,2025-12-31,best_before,Ambient,"Fruit cake, nuts","Gluten, Tree Nuts",Declared
+F133,Ready-to-Eat,2025-12-29,2025-12-31,use_by,Chilled,"Pasta carbonara, egg","Gluten, Eggs, Milk",Declared
+F134,Snacks,2025-12-18,2026-01-18,best_before,Ambient,"Pumpkin seeds","",Declared
+F135,Frozen Foods,2025-12-14,2026-03-14,best_before,Frozen,"Spinach pizza","Gluten, Milk",Declared
+F136,Dairy,2025-12-28,2026-01-02,use_by,Chilled,"Lactose free milk","Milk",Declared
+F137,Bakery,2025-12-25,2026-01-01,best_before,Ambient,"Naan bread","Gluten, Milk",Declared
+F138,Ready-to-Eat,2025-12-30,2026-01-01,use_by,Chilled,"Egg fried rice","Eggs, Soy",Declared
+F139,Snacks,2025-12-19,2026-01-19,best_before,Ambient,"Rice cakes","",Declared
+F140,Frozen Foods,2025-12-15,2026-03-15,best_before,Frozen,"Pierogi, wheat","Gluten",Declared
+F141,Dairy,2025-12-29,2026-01-03,use_by,Chilled,"Yoghurt drink","Milk",Declared
+F142,Bakery,2025-12-26,2026-01-02,best_before,Ambient,"Scones, wheat, cream","Gluten, Milk",Declared
+F143,Ready-to-Eat,2025-12-31,2026-01-02,use_by,Chilled,"Beef lasagne","Gluten, Milk",Declared
+F144,Snacks,2025-12-20,2026-01-20,best_before,Ambient,"Wasabi peas","",Declared
+F145,Frozen Foods,2025-12-16,2026-03-16,best_before,Frozen,"Frozen yoghurt","Milk",Declared
+F146,Dairy,2025-12-30,2026-01-04,use_by,Chilled,"Milkshake, chocolate","Milk",Declared
+F147,Bakery,2025-12-27,2026-01-03,best_before,Ambient,"Challah bread, eggs","Gluten, Eggs",Declared
+F148,Ready-to-Eat,2026-01-01,2026-01-03,use_by,Chilled,"Clam chowder","Molluscs, Milk",Declared
+F149,Snacks,2025-12-21,2026-01-21,best_before,Ambient,"Pork scratchings","",Declared
+F150,Frozen Foods,2025-12-17,2026-03-17,best_before,Frozen,"Ravioli, cheese","Gluten, Milk",Declared
