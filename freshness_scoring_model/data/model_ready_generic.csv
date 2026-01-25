@@ -1,0 +1,106 @@
+item_id,food_type,cooked_at,storage_temperature_c,temperature_duration_hours,expiry_type,expiry_date,ingredient_text,validation_errors,hours_since_prepared,is_use_by,has_temperature_data
+G001,Cooked Rice,2025-12-05 08:30:00,4.1,18,use_by,2025-12-07,"Rice, salt, oil",,-10268.5,1,1
+G002,Chicken Curry,2025-12-05 12:00:00,5.2,10,use_by,2025-12-08,"Chicken, spices, yoghurt",,-10272.0,1,1
+G004,Milk Pack,2025-12-06 09:00:00,3.8,36,use_by,2025-12-11,Milk,,-10293.0,1,1
+G006,Pasta Salad,2025-12-07 14:15:00,4.5,6,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10322.25,1,1
+G007,Beef Stew,2025-12-03 18:00:00,3.9,48,use_by,2025-12-06,"Beef, potatoes, broth, onions",,-10230.0,1,1
+G008,Tomato Soup,2025-12-08 11:30:00,5.0,12,use_by,2025-12-12,"Tomatoes, cream, basil",,-10343.5,1,1
+G010,Green Salad,2025-12-09 10:00:00,4.8,4,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10366.0,1,1
+G011,Cooked Rice,2025-12-05 09:45:00,3.7,20,use_by,2025-12-07,"Rice, salt, oil",,-10269.75,1,1
+G012,Chicken Curry,2025-12-06 13:20:00,6.1,12,use_by,2025-12-09,"Chicken, spices, yoghurt",,-10297.333333333334,1,1
+G014,Milk Pack,2025-12-06 08:15:00,4.2,40,use_by,2025-12-11,Milk,,-10292.25,1,1
+G016,Pasta Salad,2025-12-07 15:00:00,5.3,8,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10323.0,1,1
+G017,Beef Stew,2025-12-04 17:30:00,4.0,50,use_by,2025-12-07,"Beef, potatoes, broth, onions",,-10253.5,1,1
+G018,Tomato Soup,2025-12-08 12:00:00,5.5,14,use_by,2025-12-12,"Tomatoes, cream, basil",,-10344.0,1,1
+G020,Green Salad,2025-12-09 11:00:00,5.1,5,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10367.0,1,1
+G021,Cooked Rice,2025-12-10 08:00:00,4.3,16,use_by,2025-12-12,"Rice, salt, oil",,-10388.0,1,1
+G022,Chicken Curry,2025-12-10 12:30:00,6.4,11,use_by,2025-12-13,"Chicken, spices, yoghurt",,-10392.5,1,1
+G024,Milk Pack,2025-12-08 09:10:00,4.9,42,use_by,2025-12-13,Milk,,-10341.166666666666,1,1
+G026,Pasta Salad,2025-12-11 14:00:00,4.2,7,use_by,2025-12-13,"Pasta, mayo, peas, carrots",,-10418.0,1,1
+G027,Beef Stew,2025-12-08 19:00:00,3.7,46,use_by,2025-12-11,"Beef, potatoes, broth, onions",,-10351.0,1,1
+G028,Tomato Soup,2025-12-12 11:00:00,5.2,10,use_by,2025-12-16,"Tomatoes, cream, basil",,-10439.0,1,1
+G030,Green Salad,2025-12-13 10:15:00,4.6,3,use_by,2025-12-14,"Lettuce, spinach, cucumber",,-10462.25,1,1
+G031,Cooked Rice,2025-12-14 08:45:00,4.0,19,use_by,2025-12-16,"Rice, salt, oil",,-10484.75,1,1
+G032,Chicken Curry,2025-12-14 13:00:00,6.2,9,use_by,2025-12-17,"Chicken, spices, yoghurt",,-10489.0,1,1
+G034,Milk Pack,2025-12-12 09:20:00,4.5,38,use_by,2025-12-17,Milk,,-10437.333333333334,1,1
+G036,Pasta Salad,2025-12-15 14:30:00,5.1,5,use_by,2025-12-17,"Pasta, mayo, peas, carrots",,-10514.5,1,1
+G037,Beef Stew,2025-12-12 18:30:00,4.1,44,use_by,2025-12-15,"Beef, potatoes, broth, onions",,-10446.5,1,1
+G038,Tomato Soup,2025-12-16 12:00:00,5.4,15,use_by,2025-12-20,"Tomatoes, cream, basil",,-10536.0,1,1
+G040,Green Salad,2025-12-17 10:30:00,4.9,6,use_by,2025-12-18,"Lettuce, spinach, cucumber",,-10558.5,1,1
+G041,Cooked Rice,2025-12-18 08:15:00,4.2,17,use_by,2025-12-20,"Rice, salt, oil",,-10580.25,1,1
+G042,Chicken Curry,2025-12-18 12:45:00,6.5,10,use_by,2025-12-21,"Chicken, spices, yoghurt",,-10584.75,1,1
+G044,Milk Pack,2025-12-16 08:50:00,4.7,41,use_by,2025-12-21,Milk,,-10532.833333333334,1,1
+G046,Pasta Salad,2025-12-19 14:45:00,4.8,9,use_by,2025-12-21,"Pasta, mayo, peas, carrots",,-10610.75,1,1
+G047,Beef Stew,2025-12-16 19:15:00,3.8,47,use_by,2025-12-19,"Beef, potatoes, broth, onions",,-10543.25,1,1
+G048,Tomato Soup,2025-12-20 11:45:00,5.1,13,use_by,2025-12-24,"Tomatoes, cream, basil",,-10631.75,1,1
+G050,Green Salad,2025-12-21 10:45:00,5.0,4,use_by,2025-12-22,"Lettuce, spinach, cucumber",,-10654.75,1,1
+G051,Cooked Rice,2025-12-22 08:30:00,4.1,18,use_by,2025-12-24,"Rice, salt, oil",,-10676.5,1,1
+G052,Chicken Curry,2025-12-22 13:15:00,6.3,11,use_by,2025-12-25,"Chicken, spices, yoghurt",,-10681.25,1,1
+G054,Milk Pack,2025-12-20 09:30:00,4.3,37,use_by,2025-12-25,Milk,,-10629.5,1,1
+G056,Pasta Salad,2025-12-23 15:00:00,5.0,6,use_by,2025-12-25,"Pasta, mayo, peas, carrots",,-10707.0,1,1
+G057,Beef Stew,2025-12-20 18:45:00,3.9,45,use_by,2025-12-23,"Beef, potatoes, broth, onions",,-10638.75,1,1
+G058,Tomato Soup,2025-12-24 12:15:00,5.3,16,use_by,2025-12-28,"Tomatoes, cream, basil",,-10728.25,1,1
+G060,Green Salad,2025-12-25 10:00:00,4.7,5,use_by,2025-12-26,"Lettuce, spinach, cucumber",,-10750.0,1,1
+G061,Cooked Rice,2025-12-26 09:00:00,4.0,20,use_by,2025-12-28,"Rice, salt, oil",,-10773.0,1,1
+G062,Chicken Curry,2025-12-26 13:45:00,6.6,12,use_by,2025-12-29,"Chicken, spices, yoghurt",,-10777.75,1,1
+G064,Milk Pack,2025-12-24 10:00:00,4.6,39,use_by,2025-12-29,Milk,,-10726.0,1,1
+G066,Pasta Salad,2025-12-27 15:30:00,4.9,7,use_by,2025-12-29,"Pasta, mayo, peas, carrots",,-10803.5,1,1
+G067,Beef Stew,2025-12-24 19:30:00,4.2,43,use_by,2025-12-27,"Beef, potatoes, broth, onions",,-10735.5,1,1
+G068,Tomato Soup,2025-12-28 12:30:00,5.6,14,use_by,2026-01-01,"Tomatoes, cream, basil",,-10824.5,1,1
+G070,Green Salad,2025-12-29 11:15:00,4.5,4,use_by,2025-12-30,"Lettuce, spinach, cucumber",,-10847.25,1,1
+G071,Cooked Rice,2025-12-30 08:30:00,4.1,18,use_by,2026-01-01,"Rice, salt, oil",,-10868.5,1,1
+G072,Chicken Curry,2025-12-30 13:00:00,6.0,10,use_by,2026-01-02,"Chicken, spices, yoghurt",,-10873.0,1,1
+G074,Milk Pack,2025-12-28 09:20:00,4.4,40,use_by,2026-01-02,Milk,,-10821.333333333334,1,1
+G076,Pasta Salad,2025-12-31 14:15:00,5.2,8,use_by,2026-01-02,"Pasta, mayo, peas, carrots",,-10898.25,1,1
+G077,Beef Stew,2025-12-28 18:15:00,4.0,46,use_by,2025-12-31,"Beef, potatoes, broth, onions",,-10830.25,1,1
+G078,Tomato Soup,2026-01-01 12:00:00,5.0,12,use_by,2026-01-05,"Tomatoes, cream, basil",,-10920.0,1,1
+G080,Green Salad,2026-01-02 10:30:00,4.8,6,use_by,2026-01-03,"Lettuce, spinach, cucumber",,-10942.5,1,1
+G081,Cooked Rice,2025-12-05 09:00:00,4.1,18,use_by,2025-12-07,"Rice, salt, oil",,-10269.0,1,1
+G082,Chicken Curry,2025-12-05 13:00:00,5.8,11,use_by,2025-12-08,"Chicken, spices, yoghurt",,-10273.0,1,1
+G084,Milk Pack,2025-12-06 10:00:00,3.9,34,use_by,2025-12-11,Milk,,-10294.0,1,1
+G086,Pasta Salad,2025-12-07 15:00:00,4.6,8,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10323.0,1,1
+G087,Beef Stew,2025-12-03 19:00:00,4.0,42,use_by,2025-12-06,"Beef, potatoes, broth, onions",,-10231.0,1,1
+G088,Tomato Soup,2025-12-08 12:30:00,5.2,14,use_by,2025-12-12,"Tomatoes, cream, basil",,-10344.5,1,1
+G090,Green Salad,2025-12-09 11:30:00,4.9,5,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10367.5,1,1
+G091,Cooked Rice,2025-12-10 09:15:00,4.3,20,use_by,2025-12-12,"Rice, salt, oil",,-10389.25,1,1
+G092,Chicken Curry,2025-12-10 14:00:00,6.2,12,use_by,2025-12-13,"Chicken, spices, yoghurt",,-10394.0,1,1
+G094,Milk Pack,2025-12-08 10:15:00,4.5,39,use_by,2025-12-13,Milk,,-10342.25,1,1
+G096,Pasta Salad,2025-12-11 15:30:00,5.0,7,use_by,2025-12-13,"Pasta, mayo, peas, carrots",,-10419.5,1,1
+G097,Beef Stew,2025-12-08 20:00:00,3.8,45,use_by,2025-12-11,"Beef, potatoes, broth, onions",,-10352.0,1,1
+G098,Tomato Soup,2025-12-12 13:00:00,5.4,13,use_by,2025-12-16,"Tomatoes, cream, basil",,-10441.0,1,1
+G100,Green Salad,2025-12-13 11:45:00,4.7,4,use_by,2025-12-14,"Lettuce, spinach, cucumber",,-10463.75,1,1
+G101,Cooked Rice,2025-12-14 09:30:00,4.2,17,use_by,2025-12-16,"Rice, salt, oil",,-10485.5,1,1
+G102,Chicken Curry,2025-12-14 14:15:00,6.5,10,use_by,2025-12-17,"Chicken, spices, yoghurt",,-10490.25,1,1
+G104,Milk Pack,2025-12-12 10:30:00,4.8,42,use_by,2025-12-17,Milk,,-10438.5,1,1
+G106,Pasta Salad,2025-12-15 16:00:00,5.3,6,use_by,2025-12-17,"Pasta, mayo, peas, carrots",,-10516.0,1,1
+G107,Beef Stew,2025-12-12 20:30:00,4.1,48,use_by,2025-12-15,"Beef, potatoes, broth, onions",,-10448.5,1,1
+G108,Tomato Soup,2025-12-16 13:30:00,5.5,15,use_by,2025-12-20,"Tomatoes, cream, basil",,-10537.5,1,1
+G110,Green Salad,2025-12-17 11:15:00,4.9,5,use_by,2025-12-18,"Lettuce, spinach, cucumber",,-10559.25,1,1
+G111,Cooked Rice,2025-12-18 09:45:00,4.0,19,use_by,2025-12-20,"Rice, salt, oil",,-10581.75,1,1
+G112,Chicken Curry,2025-12-18 13:30:00,6.1,11,use_by,2025-12-21,"Chicken, spices, yoghurt",,-10585.5,1,1
+G114,Milk Pack,2025-12-16 09:40:00,4.6,38,use_by,2025-12-21,Milk,,-10533.666666666666,1,1
+G116,Pasta Salad,2025-12-19 15:15:00,4.7,9,use_by,2025-12-21,"Pasta, mayo, peas, carrots",,-10611.25,1,1
+G117,Beef Stew,2025-12-16 20:45:00,3.9,44,use_by,2025-12-19,"Beef, potatoes, broth, onions",,-10544.75,1,1
+G118,Tomato Soup,2025-12-20 12:15:00,5.1,12,use_by,2025-12-24,"Tomatoes, cream, basil",,-10632.25,1,1
+G120,Green Salad,2025-12-21 11:30:00,5.0,3,use_by,2025-12-22,"Lettuce, spinach, cucumber",,-10655.5,1,1
+G121,Cooked Rice,2025-12-22 09:15:00,4.2,18,use_by,2025-12-24,"Rice, salt, oil",,-10677.25,1,1
+G122,Chicken Curry,2025-12-22 14:00:00,6.4,10,use_by,2025-12-25,"Chicken, spices, yoghurt",,-10682.0,1,1
+G124,Milk Pack,2025-12-20 10:15:00,4.3,41,use_by,2025-12-25,Milk,,-10630.25,1,1
+G126,Pasta Salad,2025-12-23 16:30:00,5.2,7,use_by,2025-12-25,"Pasta, mayo, peas, carrots",,-10708.5,1,1
+G127,Beef Stew,2025-12-20 20:15:00,4.0,46,use_by,2025-12-23,"Beef, potatoes, broth, onions",,-10640.25,1,1
+G128,Tomato Soup,2025-12-24 13:45:00,5.3,16,use_by,2025-12-28,"Tomatoes, cream, basil",,-10729.75,1,1
+G130,Green Salad,2025-12-25 11:45:00,4.6,5,use_by,2025-12-26,"Lettuce, spinach, cucumber",,-10751.75,1,1
+G131,Cooked Rice,2025-12-26 10:15:00,4.1,20,use_by,2025-12-28,"Rice, salt, oil",,-10774.25,1,1
+G132,Chicken Curry,2025-12-26 15:00:00,6.7,12,use_by,2025-12-29,"Chicken, spices, yoghurt",,-10779.0,1,1
+G134,Milk Pack,2025-12-24 11:30:00,4.5,40,use_by,2025-12-29,Milk,,-10727.5,1,1
+G136,Pasta Salad,2025-12-27 17:00:00,5.0,8,use_by,2025-12-29,"Pasta, mayo, peas, carrots",,-10805.0,1,1
+G137,Beef Stew,2025-12-24 21:00:00,4.2,43,use_by,2025-12-27,"Beef, potatoes, broth, onions",,-10737.0,1,1
+G138,Tomato Soup,2025-12-28 14:30:00,5.4,14,use_by,2026-01-01,"Tomatoes, cream, basil",,-10826.5,1,1
+G140,Green Salad,2025-12-29 12:45:00,4.4,4,use_by,2025-12-30,"Lettuce, spinach, cucumber",,-10848.75,1,1
+G141,Cooked Rice,2025-12-30 09:45:00,4.2,18,use_by,2026-01-01,"Rice, salt, oil",,-10869.75,1,1
+G142,Chicken Curry,2025-12-30 14:30:00,6.1,10,use_by,2026-01-02,"Chicken, spices, yoghurt",,-10874.5,1,1
+G144,Milk Pack,2025-12-28 10:45:00,4.7,42,use_by,2026-01-02,Milk,,-10822.75,1,1
+G146,Pasta Salad,2025-12-31 16:30:00,5.3,6,use_by,2026-01-02,"Pasta, mayo, peas, carrots",,-10900.5,1,1
+G147,Beef Stew,2025-12-28 22:00:00,4.0,47,use_by,2025-12-31,"Beef, potatoes, broth, onions",,-10834.0,1,1
+G148,Tomato Soup,2026-01-01 13:15:00,5.1,12,use_by,2026-01-05,"Tomatoes, cream, basil",,-10921.25,1,1
+G150,Green Salad,2026-01-02 12:00:00,4.8,6,use_by,2026-01-03,"Lettuce, spinach, cucumber",,-10944.0,1,1
