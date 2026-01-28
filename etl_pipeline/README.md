@@ -1,197 +1,182 @@
 ETL Pipeline
 
-Validated data ingestion and transformation for food safety systems
+Purpose
 
-Purpose of this module
+The ETL Pipeline is responsible for transforming raw, inconsistent food related data into clean, validated, model ready datasets used by downstream intelligence layers.
 
-This module is responsible for ingesting, validating, and preparing data before it is used by any downstream logic, including machine learning, safety rules, or product interfaces.
+Its role is foundational. Every model, rule engine, and safety decision in the system depends on the correctness and reliability of this pipeline.
 
-In food safety systems, poor data is not just an inconvenience — it can lead to incorrect safety signals. For that reason, this pipeline is designed with explicit validation and failure handling, rather than assuming data is clean or complete.
+This module answers a critical question:
 
-The pipeline reflects how data would be treated in a real safety adjacent environment, where trust in inputs matters more than throughput.
+How do we ensure that food safety decisions are based on data that is complete, consistent, and trustworthy?
 
-Why ETL is treated as a first class component
+Design Philosophy
 
-I intentionally separated ETL from modelling and application logic.
+In food safety systems, data quality is a safety issue, not just a technical concern.
 
-This avoids three common problems:
+This pipeline is designed with the assumption that:
 
-models silently compensating for bad data,
+raw inputs are imperfect
 
-safety rules operating on unchecked inputs,
+schemas may vary
 
-difficulty tracing where incorrect values entered the system.
+values may be missing, malformed, or unrealistic
 
-By making ETL explicit and modular, each stage can be reasoned about, tested, and audited independently.
+Rather than silently accepting bad data, the pipeline:
 
-Folder structure and flow
+validates aggressively
+
+flags inconsistencies explicitly
+
+rejects records that violate safety assumptions
+
+The emphasis is on defensive data engineering, not optimistic ingestion.
+
+Data Sources
+
+The pipeline processes synthetic but realistic datasets inspired by:
+
+generic food preparation data
+
+regulatory style schemas such as FSSAI labelled food data
+
+These datasets include fields such as:
+
+preparation or manufacture timestamps
+
+storage temperature and duration
+
+expiry dates and expiry type
+
+ingredient and label text
+
+All data is anonymised and generated solely for demonstration purposes.
+
+Pipeline Stages
+
+The ETL process is structured into clear, auditable stages.
+
+Raw ingestion reads CSV based inputs without modification. At this stage, no assumptions are made about correctness.
+
+Cleaning standardises column names, parses dates, normalises units, and handles missing values in a controlled way.
+
+Validation enforces safety critical constraints. Examples include:
+
+temperature ranges outside safe bounds
+
+expiry dates earlier than preparation dates
+
+negative or unrealistic time durations
+
+Records that fail validation are flagged or excluded rather than repaired silently.
+
+Transformation derives model ready features, including:
+
+time since preparation
+
+expiry proximity indicators
+
+temperature risk features
+
+categorical encodings required for modelling
+
+Load writes clean, validated datasets to clearly defined outputs that downstream modules can consume without additional checks.
+
+Each stage is isolated to make the pipeline easier to test, reason about, and extend.
+
+Folder Structure
 etl_pipeline/
-│
-├─ raw/
-├─ clean/
-├─ validate/
-├─ transform/
-├─ load/
-└─ README.md
+├── raw/        # Raw input datasets
+├── clean/      # Cleaning and standardisation logic
+├── validate/   # Data quality and safety validation
+├── transform/  # Feature engineering and transformation
+├── load/       # Model ready data outputs
+├── run_etl.py  # Pipeline execution entry point
+└── README.md
 
 
-The folders are ordered deliberately to reflect data state, not just processing steps.
+This structure mirrors how production ETL pipelines are typically organised, separating concerns clearly.
 
-raw/ — source data as received
+Execution Model
 
-This folder contains data exactly as it enters the system.
+The pipeline can be executed from the command line as a single, reproducible process.
 
-Characteristics
+Execution follows a fixed order:
 
-No assumptions about correctness
+ingest
 
-No schema enforcement
+clean
 
-May contain missing values, duplicates, or inconsistent formats
+validate
 
-Why raw data is preserved
+transform
 
-Keeping raw data untouched makes it possible to:
+load
 
-trace issues back to source,
+Intermediate outputs are not reused implicitly, reducing the risk of stale or inconsistent data influencing results.
 
-reproduce errors,
+This design makes the pipeline suitable for:
 
-avoid hiding upstream problems through premature cleaning.
+batch execution
 
-This mirrors how ingestion layers work in production pipelines.
+scheduled runs
 
-clean/ — basic normalisation
+integration with orchestration tools
 
-This stage performs non destructive cleaning.
+Error Handling and Data Integrity
 
-Typical actions
+A key design decision is to fail safely.
 
-timestamp parsing and standardisation,
+If a record violates a safety or integrity rule:
 
-unit normalisation (e.g. temperature units),
+it is excluded from model ready outputs
 
-trimming obvious formatting issues.
+the issue is made visible through validation logic
 
-What is intentionally not done here
+This prevents downstream models from being trained or scored on unsafe assumptions.
 
-No filtering of records based on safety logic
+The pipeline is intentionally conservative, reflecting the requirements of safety-critical systems.
 
-No assumptions about validity
+Role Within the Overall System
 
-The goal is to make data consistent, not “correct”.
+The ETL Pipeline feeds:
 
-validate/ — data quality and safety checks
+the Freshness Scoring Model
 
-This is the most important stage of the pipeline.
+label interpretation features
 
-What is validated
+safety and marketplace logic
 
-required fields are present,
+Downstream components assume that:
 
-timestamps follow logical order,
+schemas are consistent
 
-temperature values fall within plausible physical ranges,
+values are within expected bounds
 
-missing or inconsistent readings are flagged.
+critical safety constraints have already been enforced
 
-How failures are handled
+This allows later modules to focus on intelligence and decision making rather than data hygiene.
 
-Validation failures are explicitly surfaced, not silently fixed.
-Records can be:
+Why This Matters
 
-flagged for review,
+Many data projects underestimate the importance of ETL design. In safety related domains, this is a serious risk.
 
-excluded from scoring,
+This pipeline demonstrates:
 
-or trigger conservative downstream behaviour.
+structured data engineering
 
-This prevents unsafe assumptions from propagating into models.
+explicit validation logic
 
-transform/ — feature preparation
+separation between raw and trusted data
 
-Once data has passed validation, it is transformed into a form suitable for analysis.
+readiness for scale and extension
 
-Examples
+It shows an understanding that good models depend on disciplined data foundations.
 
-time since cooking calculations,
+Reflection
 
-aggregation of temperature readings,
+This module reflects how I approach data engineering in real systems.
 
-derivation of exposure or handling features.
+Rather than optimising for speed or minimal code, the focus is on correctness, traceability, and safety. Decisions are made explicit, assumptions are enforced, and failure modes are controlled.
 
-Transformations are deterministic and documented, making them easy to audit or adjust.
-
-load/ — structured outputs
-
-This stage prepares validated and transformed data for downstream use.
-
-Outputs may include
-
-model ready feature tables,
-
-safety metadata,
-
-references for traceability.
-
-The load step makes a clear contract: downstream systems should assume validated input, but not infallibility.
-
-Design choices and constraints
-
-Several design decisions were intentional:
-
-Validation is explicit rather than implicit.
-
-No stage assumes downstream correction.
-
-Failures favour exclusion over silent repair.
-
-Data lineage is preserved wherever possible.
-
-These choices reflect how safety oriented pipelines are typically designed in practice.
-
-Interaction with downstream modules
-
-This pipeline feeds:
-
-the freshness scoring model,
-
-label interpretation logic,
-
-allergen detection,
-
-and product level decisions.
-
-Downstream modules are designed to trust validation, but still apply conservative rules where necessary. This layered approach avoids over reliance on any single safeguard.
-
-Reflection and trade offs
-
-Key trade offs in this design:
-
-I prioritised correctness and traceability over speed.
-
-I accepted stricter validation at the cost of losing some data.
-
-I avoided auto correction to prevent masking upstream issues.
-
-If extended, this pipeline could incorporate:
-
-automated monitoring of validation failures,
-
-anomaly detection for sensor data,
-
-versioned schemas for evolving inputs.
-
-Why this module matters
-
-This ETL pipeline demonstrates:
-
-real world data engineering judgement,
-
-awareness of safety implications,
-
-careful handling of uncertainty,
-
-separation of data quality from business logic.
-
-It underpins the entire system by ensuring that every decision is based on data that has been deliberately examined, not assumed to be correct.
+The ETL Pipeline is deliberately designed to support long term system reliability, not just short term experimentation.
