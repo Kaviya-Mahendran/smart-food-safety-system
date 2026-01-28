@@ -1,199 +1,254 @@
-Smart Food Safety & Freshness Scoring System
+**Project Overview **
 
-A machine learning driven food safety and waste reduction system inspired by UK standards
+Smart Food Safety & Freshness Scoring System is an innovation driven prototype that combines machine learning, rule based safety evaluation, OCR/NLP inspired label parsing, and a structured data engineering pipeline to assess food freshness and safety risk in a transparent, explainable way.
 
-Why I built this
+I designed this system after experiencing the clarity and consistency of food labelling and safety standards in the UK, and contrasting it with the ambiguity and inconsistency commonly seen elsewhere. The project explores how data, analytics, and responsible AI design can help consumers and food businesses make safer, better informed decisions.
 
-While living in the UK, I experienced food systems where safety, freshness, and allergen information are communicated clearly and consistently. “Use by” and “best before” labels are treated differently, allergen warnings are prominent, and surplus food redistribution is governed by clear safety rules.
+This is not a collection of isolated scripts.
+It is an end to end product concept from raw data ingestion, to scoring logic, to user facing safety decisions.
 
-Outside that environment, I noticed how unclear freshness indicators, inconsistent labelling, and over reliance on static expiry dates often lead to two outcomes:
+The project demonstrates my ability to:
 
-people consume food without understanding real risk, or
+design real world data systems,
 
-food that is still safe is unnecessarily discarded.
+balance ML with deterministic safety rules,
 
-After my employment ended in April 2024, I used that time to independently design and build a data driven system that explores how machine learning, structured pipelines, and explicit safety rules could improve both consumer safety and food waste outcomes.
+and think beyond models into product behaviour and user trust.
 
-This repository contains that system.
+ Innovation Summary 
 
-What this system does (in plain terms)
+Most food safety applications today rely on:
 
-The system assigns a Freshness Score (0–100) to food items and uses that score, alongside strict safety rules, to decide whether food is:
+static expiry reminders,
 
-safe to consume,
+barcode lookups,
 
-should be consumed soon, or
+or purely rule based logic.
 
-must be rejected.
+This system introduces predictive and explainable scoring, normally not applied in consumer food safety contexts.
 
-It does this by combining:
+What makes this system innovative:
 
-time since cooking or packaging,
+Hybrid decision model combining ML driven freshness scoring with rule based safety enforcement
 
-storage temperature behaviour,
+Configurable freshness engine using time since preparation, storage temperature, duration, and label metadata
 
-expiry label interpretation,
+Explainable outputs, where safety decisions can be traced back to contributing factors
 
-ingredient and allergen text,
+Label understanding module that translates unstructured expiry text into structured risk signals
 
-conservative rule based safety checks.
+Privacy aware pipeline design, using synthetic and anonymised data for modelling
 
-The goal is not to replace judgement, but to provide clearer, data informed signals that are easy to understand and difficult to misuse.
+Product ready architecture that can extend to allergens, recalls, and surplus food redistribution
 
-Design principles
+Rather than treating food safety as a binary “expired / not expired” problem, this system models risk as a spectrum, making safety information more transparent and actionable.
 
-This project was designed around a few deliberate principles:
+This comparative approach — blending prediction, rules, and product logic is the core innovation of the project.
 
-Safety over optimisation
-If the model is uncertain, the system defaults to caution.
+System Architecture
 
-Transparency over complexity
-Rule based logic is preferred where explainability matters more than raw accuracy.
+The system is designed as a clear, layered architecture:
 
-Probabilistic, not absolute decisions
-Freshness is modelled as a score, not a binary outcome.
+Input Layer
 
-Separation of concerns
-ML, OCR, ETL, and product logic are kept modular and auditable.
+Cooking / packing timestamps
 
-These principles reflect how safety critical systems are typically designed in regulated environments like the UK.
+Storage temperature and duration
 
-High level system flow
+Ingredient and allergen text
 
-Inputs
+Expiry label text
 
-Cooking or packaging timestamps
+Data & Processing Layer
 
-Storage and temperature logs
+ETL pipeline with validation and quality checks
 
-Expiry label text (“use by”, “best before”)
+Feature engineering for freshness and risk modelling
 
-Ingredient and allergen information
+Intelligence Layer
 
-Processing
+ML based Freshness Scoring Engine
 
-Data validation and cleaning (ETL)
+Rule based Smart Label Scanner
 
-Feature engineering
+Rule based Allergen Detection
 
-ML based freshness scoring
+Safety Decision Layer
 
-Rule based safety classification
+Threshold based safety classification
 
-Allergen extraction and risk flags
+Human readable decision outcomes (Safe / Eat Soon / Unsafe)
 
-Outputs
+Product Layer
 
-Freshness Score (0–100)
+Consumer safety view
 
-Safety status (Safe / Eat Soon / Unsafe)
+Surplus food marketplace eligibility logic
 
-Allergen warnings
+UI mockups demonstrating real world usage
 
-Eligibility for surplus food resale
+Architecture diagrams are available in the /docs folder.
 
-Architecture diagrams and schemas are provided in the /docs folder.
-
-Repository structure and intent
-
-This repository represents one integrated system, broken into focused modules to reflect real world system design.
-
+Repository Structure (Assessor Friendly)
 smart food safety system/
 │
-├─ freshness_scoring_model/
-│   → Feature engineering, ML modelling, scoring logic
-│
-├─ smart_label_scanner/
-│   → OCR extraction and expiry based safety rules
-|
-├─ allergen_detection/
-│   → Allergen profiles, parsing logic, risk flags
-│
-├─ etl_pipeline/
-│   → Raw → clean → validate → transform → load pipeline
-│
-├─ surplus_food_marketplace/
-│   → Product logic and UI prototypes for safe surplus resale
-│
-├─ docs/
-│   → Architecture diagrams, data schema, ethics and safety notes
-│
-└─ README.md
+├── etl_pipeline/                # Data ingestion, cleaning, validation, transformation
+├── freshness_scoring_model/     # ML scoring logic, notebooks, explainability
+├── smart_label_scanner/         # OCR inspired label parsing + rules engine
+├── allergen_detection/          # Rule based allergen risk detection
+├── surplus_food_marketplace/    # Marketplace eligibility logic + UI mockups
+├── docs/                        # Architecture diagrams, schema, design notes
+└── README.md                    # This document
 
 
-Each module contains its own README.md explaining:
+Each module is runnable independently from the terminal and documented separately.
 
-why the module exists,
+Technical Highlights (Mapped to Mandatory & Optional Criteria)
 
-how it is designed,
+This project explicitly demonstrates:
 
-example logic or code,
+Data Engineering
 
-why the design choices matter,
+ETL pipeline design
 
-what trade offs were made.
+Validation and quality checks
 
-Key components (briefly)
-Freshness scoring model
+Feature transformation logic
 
-A supervised ML model that estimates food safety and quality using time and condition based features. The output is a bounded score (0–100) designed for interpretation, not blind automation. Model explainability is included to support trust and auditability.
+Machine Learning
 
-Smart label scanner
+Freshness risk modelling
 
-An OCR based component that extracts expiry information and applies explicit rules to classify risk. This ensures conservative decisions even when text is unclear or partially missing.
+Scoring normalisation (0–100)
 
-Allergen detection
+Model interpretability (feature importance / SHAP style reasoning)
 
-A rule based allergen parser that prioritises reliability and clarity over complex NLP. This choice reflects the higher risk tolerance required in food safety contexts.
+NLP / OCR Inspired Processing
 
-ETL pipeline
+Label text parsing
 
-A structured pipeline with explicit validation and quality checks, designed to show how unsafe or inconsistent data is handled before it reaches the model.
+Rule based expiry classification
 
-Surplus food marketplace (prototype)
+Responsible AI & Ethics
 
-A conceptual product layer that demonstrates how freshness scores and safety rules could be surfaced to users while preventing unsafe resale by design.
+Safety first decision logic
 
-Responsible and ethical design
+Explicit allergen risk flagging
 
-This system is intentionally not fully automated.
+Privacy aware synthetic data usage
 
-ML predictions are treated as advisory signals.
+System & Architecture Design
 
-Rule based overrides enforce safety thresholds.
+Modular, extensible structure
 
-Unsafe items are blocked regardless of potential value.
+Clear separation of concerns
 
-Human judgement is assumed at the final decision point.
+Product Thinking
 
-A detailed discussion of these choices is available in /docs/ethics_and_safety.md.
+Consumer facing safety explanations
 
-Why this project is relevant to the UK
+Marketplace eligibility enforcement
 
-This project reflects approaches commonly used in UK digital and data systems:
+UX mockups demonstrating real usage
 
-emphasis on safety and governance,
+These skills are deliberately surfaced so assessors do not need to infer them.
 
-transparent decision logic,
+Deep Dive: Freshness Scoring Engine
 
-separation between prediction and enforcement,
+At the core of the system is the Freshness Scoring Engine, which assigns a 0–100 freshness score to each food item.
 
-responsible use of machine learning in regulated domains.
+The score is derived from:
 
-It demonstrates how skills in data architecture, ML, and product design can be applied to socially meaningful problems aligned with UK priorities around food safety and waste reduction.
+time elapsed since cooking or packaging,
 
-Authorship and independence
+storage temperature,
 
-This project was fully self initiated, designed, and implemented by me outside formal employment. It represents independent technical work, architectural decision making, and product thinking rather than academic or tutorial based experimentation.
+duration at unsafe temperatures,
 
-Future directions
+expiry label type (use by vs best before).
 
-Potential extensions include:
+The model combines:
 
-calibration using real sensor data,
+feature weighted scoring logic,
 
-alignment with formal UK food safety standards,
+supervised learning for risk prediction,
 
-controlled pilots with food service environments,
+safety thresholds that override model output when required.
 
-expanded explainability for consumer facing use.
+Explainability was a priority. Feature contributions are logged and analysed so that:
+
+low scores can be explained,
+
+unsafe decisions are justifiable,
+
+and outputs remain interpretable to non technical users.
+
+This reflects real world safety systems where transparency is as important as accuracy.
+
+Future Roadmap 
+
+This prototype is intentionally designed to scale.
+
+Potential future extensions include:
+
+Adaptive scoring thresholds using reinforcement learning
+
+Personalised safety curves based on user behaviour
+
+Integration with government recall and safety alert APIs
+
+Batch prediction for retail and food service chains
+
+Analytics dashboards for food waste optimisation
+
+Federated learning for privacy preserving model updates
+
+These directions demonstrate how the system could evolve into a full product ecosystem, not just a technical demo.
+
+Impact Statement
+
+This project explores how data and AI can improve public safety and reduce food waste.
+
+By making freshness and safety decisions more transparent, the system empowers consumers, supports responsible food redistribution, and encourages safer food handling practices.
+
+It reflects my interest in applying analytics and machine learning to real societal problems, not just abstract technical challenges.
+
+ Supporting Technical Writing
+
+Detailed explanations of design decisions and technical trade offs are (or will be) covered in supporting blog posts, including:
+
+Designing a Freshness Scoring Engine
+
+Rule Based vs ML Based Safety Decisions
+
+Label Understanding with NLP Techniques
+
+Privacy Aware Data Modelling for Consumer Systems
+
+These writings support recognition beyond employment and complement the technical work.
+
+Demo Screens & UI Mockups
+
+The /surplus_food_marketplace/ui_mockups folder contains low fidelity screens illustrating:
+
+Consumer safety views
+
+Freshness score presentation
+
+Allergen risk warnings
+
+Surplus food eligibility display
+
+These mockups elevate the project from a technical exercise to a product prototype.
+
+Final Note
+
+This repository represents independent, original work demonstrating:
+
+technical depth,
+
+innovation,
+
+and leadership potential in digital technology.
+
+It is intentionally designed to be readable, explainable, and extensible the same qualities expected in real world data products.
