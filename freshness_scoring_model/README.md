@@ -1,209 +1,147 @@
 Freshness Scoring Model
 
-Machine learning model for estimating food safety and freshness
+Purpose
 
-Purpose of this module
+The Freshness Scoring Model is the core intelligence component of the Smart Food Safety System.
 
-This module is the core analytical component of the system.
+Its purpose is to estimate the current freshness and safety risk of a food item using a continuous score between 0 and 100, rather than relying on binary expiry logic. This allows food safety to be assessed as a gradient, reflecting real world storage and handling conditions.
 
-Its purpose is to estimate how safe and fresh a food item is at a given point in time, using a combination of time based decay, storage conditions, and handling signals. Rather than producing a binary “expired / not expired” outcome, the model outputs a Freshness Score between 0 and 100, designed to reflect gradual risk increase rather than sudden failure.
+The model answers a practical question:
+How fresh and safe is this food item right now, given how it has been stored and handled?
 
-I intentionally designed this as a decision support model, not an automated enforcement mechanism. The score is later combined with explicit safety rules elsewhere in the system.
+The output of this module is intentionally designed to inform safety decisions, not replace them.
 
-How this module fits into the wider system
+Design Rationale
 
-This model sits downstream of the ETL pipeline and upstream of safety classification and product logic.
+Most consumer food safety tools rely on static expiry dates or simple countdown timers. These approaches fail to account for how food degrades in practice, where factors such as temperature, time, and handling conditions significantly affect safety.
 
-It only consumes validated and cleaned data
+This module was designed to:
 
-It does not make final safety decisions
+Treat freshness as a spectrum rather than a binary state
 
-It provides a transparent, explainable signal that other modules can interpret conservatively
+Combine predictive modelling with deterministic safety logic downstream
 
-This separation ensures that model uncertainty never directly results in unsafe outcomes.
+Prioritise explainability over opaque accuracy gains
 
-Folder structure and design intent
-freshness_scoring_model/
-│
-├── data/
-├── notebooks/
-├── scripts/
-├── models/
-└── README.md
+The design reflects how real food safety systems operate, where risk estimation must be transparent, auditable, and defensible.
 
+Data Inputs
 
-Each resource exists for a specific reason, not convenience.
+The model consumes validated, model ready data produced by the ETL pipeline.
 
-data/ — controlled, realistic input data
+Typical input features include:
 
-This folder contains synthetic but realistic datasets representing food items and their storage conditions.
+Time elapsed since cooking or packaging
 
-What is included
+Storage temperature in degrees Celsius
 
-Food preparation or packaging timestamps
-
-Storage temperature readings over time
+Duration of storage under those conditions
 
 Expiry label type (use by vs best before)
 
-Handling duration and exposure indicators
+Basic food category indicators
 
-Why this matters
+All datasets used are synthetic and anonymised, created to mirror realistic distributions without exposing real consumer or business data.
 
-I deliberately avoided toy datasets. Even though the data is simulated, it mirrors real operational patterns such as:
+Feature Engineering
 
-temperature fluctuations during storage,
+Feature engineering focuses on clarity and interpretability.
 
-gradual risk accumulation,
+Examples include:
 
-incomplete or imperfect logging.
+Time based decay features
 
-This allows the model to be tested against messy but realistic scenarios, which is closer to how food systems operate in practice.
+Temperature risk bands
 
-notebooks/ — reasoning, not just results
+Categorical encoding for expiry types
 
-The notebooks document the thinking process behind the model, not just the final outcome.
+Combined indicators capturing time temperature interaction
 
-Typical notebooks include
+Features are intentionally simple, allowing each contribution to be explained clearly. This is important in safety related contexts where decisions must be justified to non technical stakeholders.
 
-data exploration and sanity checks
+Model Selection and Scoring Logic
 
-feature engineering decisions
+A lightweight supervised learning approach is used to estimate freshness risk, which is then mapped to a standardised 0–100 freshness score.
 
-model selection experiments
+Key design choices include:
 
-scoring calibration
+Preference for stable, interpretable models
 
-explainability analysis
+Explicit score normalisation
 
-Why notebooks are used here
+Deterministic post processing to enforce safety constraints
 
-I used notebooks intentionally for this stage because they:
+Score interpretation:
 
-make assumptions visible,
+Scores close to 100 indicate very fresh, low risk items
 
-show how features were chosen,
+Lower scores indicate increasing degradation and safety risk
 
-allow reviewers to follow the logic step by step.
+The freshness score is not a final decision. It is a signal used by downstream safety and marketplace logic.
 
-This is especially important in safety related modelling, where understanding why a model behaves a certain way is more important than marginal accuracy gains.
+Explainability and Interpretability
 
-scripts/ — reusable, auditable logic
+Explainability is treated as a core requirement.
 
-This folder contains Python scripts that extract reusable logic from the notebooks.
+This module includes:
 
-What lives here
+Feature contribution analysis
 
-feature transformation functions
+Model coefficient inspection
 
-scoring normalisation logic
+Saved artefacts demonstrating how inputs influence outputs
 
-helper utilities for model evaluation
+The goal is that any low score can be explained in plain language, supporting transparency and trust. This mirrors real world safety systems where explainability is essential.
 
-Why this separation matters
+Folder Structure
+freshness_scoring_model/
+├── data/        # Model ready datasets produced by the ETL pipeline
+├── notebooks/   # Exploration, training, and evaluation
+├── scripts/     # Reusable scoring and safety logic
+├── models/      # Saved model artefacts and coefficients
+└── README.md
 
-Notebooks are useful for exploration, but production oriented logic should be:
 
-version controlled,
+The separation ensures that experimentation, production logic, and artefacts remain clearly organised.
 
-readable without execution,
+Role Within the Overall System
 
-easy to audit.
+This module:
 
-By moving core logic into scripts, I made the model easier to reason about and reuse without relying on interactive notebooks.
+Does not make final safety decisions
 
-models/ — trained artefacts and metadata
+Does not override expiry rules
 
-This folder contains the trained model artefacts and related metadata.
+Does not interact with users directly
 
-What is stored
+Instead, it provides an interpretable freshness signal that feeds into the Safety Decision Layer, where rule based logic enforces conservative safety outcomes.
 
-trained model files
+This separation of concerns improves maintainability and auditability.
 
-configuration or parameter snapshots
+Why This Matters
 
-evaluation summaries
+From a technical perspective, this module demonstrates:
 
-Why models are stored separately
+Applied machine learning for real world risk estimation
 
-This separation reflects real ML workflows, where:
+Feature engineering grounded in domain logic
 
-data,
+Explainability in a safety critical context
 
-training logic,
+From a product perspective, it shows how predictive scoring can reduce unnecessary food waste while maintaining safety and user trust.
 
-and trained artefacts
+Reflection
 
-are treated as distinct concerns.
+This module reflects my approach to applied machine learning: start from the real world problem, prioritise interpretability, and embed ML within a broader system rather than treating it as an isolated solution.
 
-It also makes it clear that the model is an output, not a black box embedded directly in application code.
+The Freshness Scoring Model is designed to be practical, explainable, and extensible, aligning with how safety focused digital systems are built in production environments.
 
-Scoring logic (conceptual overview)
+When you’re ready, we can move on to the README for:
 
-The Freshness Score is designed to behave intuitively:
+smart_label_scanner
 
-Starts near 100 shortly after cooking or packaging
+allergen_detection
 
-Gradually decays as time passes
+etl_pipeline (more technical)
 
-Decays faster under poor storage conditions
-
-Is bounded and interpretable
-
-The model estimates risk, and the score is then:
-
-scaled to a 0–100 range,
-
-calibrated to avoid sharp drops,
-
-designed to be conservative near unsafe thresholds.
-
-This avoids misleading precision and supports downstream safety rules.
-
-Model choice and explainability
-
-I prioritised models that balance:
-
-interpretability,
-
-stability,
-
-and reasonable performance.
-
-Rather than optimising aggressively for accuracy, I focused on:
-
-feature importance,
-
-monotonic behaviour where appropriate,
-
-and explainability using feature contribution analysis.
-
-This aligns with how ML is typically used in regulated or safety sensitive contexts.
-
-What this module intentionally does not do
-
-This model does not:
-
-make final safety decisions
-
-override expiry rules
-
-approve food for resale
-
-operate without validation
-
-Those responsibilities belong to other modules by design.
-
-This boundary is deliberate and reflects how ML systems should be used responsibly.
-
-Reflection and trade offs
-
-Several conscious trade offs were made here:
-
-Rule based safety is prioritised over model confidence
-
-Interpretability is prioritised over complex deep models
-
-Synthetic data is used carefully to demonstrate logic, not claim real world deployment
-
-If this system were extended, the first priority would be calibration with real sensor data, not adding more model complexity.
+Just tell me the next folder.
