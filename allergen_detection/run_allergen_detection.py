@@ -4,7 +4,16 @@ from allergen_detection.parser.extract_allergens import detect_allergens
 
 
 def run_allergen_detection():
-    inputs_path = Path(__file__).resolve().parent / "sample_inputs" / "sample_ingredients.txt"
+    """
+    Run allergen detection on sample ingredient inputs.
+    """
+
+    # Path matches your actual folder name: samples_inputs
+    inputs_path = (
+        Path(__file__).resolve().parent
+        / "samples_inputs"
+        / "sample_ingredients.txt"
+    )
 
     print("Running Allergen Detection...\n")
 
@@ -21,7 +30,7 @@ def run_allergen_detection():
         result = detect_allergens(text)
 
         print(f"Sample {idx}")
-        print("-" * 20)
+        print("-" * 25)
         print("Ingredient text:")
         print(text)
         print("\nDetection result:")
