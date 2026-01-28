@@ -1,176 +1,146 @@
 Smart Label Scanner
 
-OCR based expiry interpretation and safety classification
+Purpose
 
-Purpose of this module
+The Smart Label Scanner module is designed to interpret unstructured food label text and convert it into structured safety signals that can be used by downstream systems.
 
-This module is responsible for interpreting expiry information directly from food labels and translating it into clear, conservative safety signals.
+Its purpose is to demonstrate how expiry and storage information commonly printed on food packaging can be extracted, classified, and reasoned about programmatically.
 
-In many real world settings, expiry labels are:
+This module answers a simple but important question:
 
-inconsistently formatted,
+What does this food label actually mean in terms of safety risk?
 
-partially obscured,
+It does not make final safety decisions. Instead, it provides interpretable inputs to the wider food safety pipeline.
 
-misunderstood by consumers,
+Design Philosophy
 
-treated as interchangeable even when they are not.
+Food labels are written for humans, not machines. They vary in wording, format, and clarity, especially across regions and manufacturers.
 
-The purpose of this module is not simply to extract text, but to interpret expiry intent and classify food items into meaningful safety categories that people can act on.
+Rather than aiming for perfect OCR accuracy or complex NLP models, this module focuses on:
 
-Why this module exists separately
+clarity of logic
 
-I intentionally designed expiry interpretation as a standalone module, rather than embedding it inside the ML model.
+explainability of outcomes
 
-Expiry labels represent regulatory and safety intent, not probabilistic signals. Treating them as features alone would blur the distinction between:
+robustness to common label patterns
 
-what is legally or medically unsafe, and
+The design prioritises rule based interpretation over black box predictions, making the system easier to audit and reason about in safety critical contexts.
 
-what is statistically likely to be low risk.
+How the Scanner Works
 
-By separating this logic, expiry rules remain:
+The module is structured as two clear layers:
 
-explicit,
+The first layer simulates OCR extraction. In a real system, this would process an image and extract text. For this project, the OCR step is intentionally simplified and replaced with sample label text to keep the focus on interpretation logic.
 
-auditable,
+The second layer applies deterministic rules to classify the extracted text. It identifies:
 
-and override ML predictions when required.
+label type, such as use by or best before
 
-Folder structure and design intent
+relative risk level based on label semantics
+
+expiry dates when they can be reliably extracted
+
+This separation mirrors real world systems where text extraction and interpretation are distinct concerns.
+
+Inputs
+
+Inputs to this module are raw label text strings that resemble real packaging information.
+
+Examples include:
+
+use by dates with storage instructions
+
+best before dates with general guidance
+
+mixed informational text containing allergens or warnings
+
+Sample inputs are provided to demonstrate how different labels are handled without requiring image datasets.
+
+Outputs
+
+The scanner produces structured outputs including:
+
+label classification type
+
+inferred risk level
+
+extracted expiry date when available
+
+These outputs are designed to be:
+
+human readable
+
+explainable
+
+suitable for integration into ETL and safety logic
+
+The module does not enforce expiry rules. It simply reports what the label implies.
+
+Folder Structure
 smart_label_scanner/
-│
-├─ ocr/
-├─ rules_engine/
-└─ README.md
+├── ocr/            # OCR simulation and text extraction stubs
+├── rules_engine/   # Rule based label classification logic
+├── sample_labels/  # Sample label text inputs
+├── run_label_scan.py
+└── README.md
 
 
-Each folder reflects a distinct responsibility.
+This structure keeps extraction, interpretation, and execution clearly separated.
 
-ocr/ — extracting expiry text
+Terminal Execution
 
-This component focuses solely on text extraction, not interpretation.
+The module can be executed directly from the command line to demonstrate behaviour.
 
-What it handles
+Running the scanner prints:
 
-Printed expiry dates
+the raw label text
 
-“Use by” and “Best before” phrases
+the inferred label type
 
-Common date formats and separators
+the associated risk level
 
-Design considerations
+any extracted expiry date
 
-OCR output is often noisy. I treated OCR results as:
+This makes the module easy to test, inspect, and explain without additional tooling.
 
-imperfect inputs,
+Role Within the Overall System
 
-requiring validation,
+The Smart Label Scanner acts as an input signal provider.
 
-unsuitable for direct decision making.
+Its outputs are used by:
 
-For this reason, OCR output is passed forward as structured text rather than used immediately for safety classification.
+the ETL pipeline for structured ingestion
 
-rules_engine/ — interpreting expiry intent
+the freshness scoring logic as contextual features
 
-This folder contains the logic that interprets OCR output and converts it into safety categories.
+the safety decision layer as supporting evidence
 
-Core rule distinctions
+It does not override freshness scores or safety rules. Instead, it adds context and interpretability to downstream decisions.
 
-Use by → strict safety cutoff
+Why This Matters
 
-Best before → quality degradation, not immediate risk
+Expiry labels are one of the most misunderstood aspects of food safety. Many consumers treat all dates as absolute cut offs, while others ignore them entirely.
 
-The rules engine explicitly models these differences rather than collapsing them into a single “expiry date”.
+This module demonstrates how:
 
-Safety classification logic
+label semantics can be interpreted programmatically
 
-The rules engine maps expiry interpretation into three outcomes:
+ambiguity can be reduced through structured reasoning
 
-Green – Safe
-Food is within acceptable safety or quality limits.
+safety information can be made clearer without adding complexity
 
-Yellow – Eat Soon
-Food is approaching expiry or quality degradation but not unsafe.
+It highlights how relatively simple logic, when well designed, can meaningfully improve decision making.
 
-Red – Unsafe
-Food exceeds safe consumption thresholds and must be rejected.
+Reflection
 
-These categories are designed to be:
+This module reflects a pragmatic approach to applied NLP and OCR problems.
 
-easy to understand,
+Rather than optimising for technical novelty, the focus is on:
 
-difficult to misinterpret,
+robustness
 
-conservative by default.
+explainability
 
-Interaction with the ML freshness score
+suitability for safety critical systems
 
-This module is designed to override, not compete with, the ML model.
-
-Examples:
-
-A high Freshness Score does not override a “Use by” violation.
-
-OCR uncertainty results in stricter classification, not optimism.
-
-This ensures that statistical signals never undermine explicit safety constraints.
-
-Why this is rule based (not ML)
-
-Expiry interpretation is not a pattern recognition problem. It is a domain rule problem.
-
-I chose a rule based approach because:
-
-it is explainable,
-
-it aligns with regulatory reasoning,
-
-errors are easier to detect and correct,
-
-conservative behaviour is easier to enforce.
-
-This reflects how safety critical systems are typically implemented in practice.
-
-Limitations and assumptions
-
-This module assumes:
-
-labels are printed in a readable format,
-
-OCR confidence is available or inferred,
-
-conservative fallback is acceptable when uncertainty exists.
-
-It is intentionally designed to fail safely rather than attempt to guess.
-
-Reflection and trade offs
-
-Several trade offs were made:
-
-I prioritised clarity over coverage, accepting that some edge cases would default to caution.
-
-I separated OCR from interpretation to avoid coupling text noise with safety decisions.
-
-I chose rules over ML to reflect the nature of expiry logic.
-
-If extended, this module could incorporate:
-
-multilingual label handling,
-
-confidence weighted OCR fallbacks,
-
-alignment with jurisdiction specific food labelling standards.
-
-Why this module matters
-
-This module demonstrates:
-
-understanding of regulatory intent,
-
-conservative system design,
-
-separation between extraction and decision making,
-
-user centric safety communication.
-
-It complements the ML model by grounding the system in explicit, non negotiable safety rules, which is essential in food related applications.
+The Smart Label Scanner shows how unstructured information can be responsibly integrated into a larger, end to end data product.
