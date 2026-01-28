@@ -1,0 +1,106 @@
+item_id,food_type,cooked_at,storage_temperature_c,temperature_duration_hours,expiry_type,expiry_date,ingredient_text,validation_errors,hours_since_prepared,is_use_by,has_temperature_data,freshness_risk,predicted_risk,freshness_score,is_expired,safety_decision
+G001,Cooked Rice,2025-12-05 08:30:00,4.1,18,use_by,2025-12-07,"Rice, salt, oil",,-10268.5,1,1,-142.41805555555555,0.0,100.0,True,UNSAFE
+G002,Chicken Curry,2025-12-05 12:00:00,5.2,10,use_by,2025-12-08,"Chicken, spices, yoghurt",,-10272.0,1,1,-142.46666666666667,0.0,100.0,True,UNSAFE
+G004,Milk Pack,2025-12-06 09:00:00,3.8,36,use_by,2025-12-11,Milk,,-10293.0,1,1,-142.75833333333335,0.0,100.0,True,UNSAFE
+G006,Pasta Salad,2025-12-07 14:15:00,4.5,6,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10322.25,1,1,-143.16458333333335,0.0,100.0,True,UNSAFE
+G007,Beef Stew,2025-12-03 18:00:00,3.9,48,use_by,2025-12-06,"Beef, potatoes, broth, onions",,-10230.0,1,1,-141.88333333333335,0.0,100.0,True,UNSAFE
+G008,Tomato Soup,2025-12-08 11:30:00,5.0,12,use_by,2025-12-12,"Tomatoes, cream, basil",,-10343.5,1,1,-143.45972222222224,0.0,100.0,True,UNSAFE
+G010,Green Salad,2025-12-09 10:00:00,4.8,4,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10366.0,1,1,-143.77222222222224,0.0,100.0,True,UNSAFE
+G011,Cooked Rice,2025-12-05 09:45:00,3.7,20,use_by,2025-12-07,"Rice, salt, oil",,-10269.75,1,1,-142.43541666666667,0.0,100.0,True,UNSAFE
+G012,Chicken Curry,2025-12-06 13:20:00,6.1,12,use_by,2025-12-09,"Chicken, spices, yoghurt",,-10297.333333333334,1,1,-142.81851851851854,0.0,100.0,True,UNSAFE
+G014,Milk Pack,2025-12-06 08:15:00,4.2,40,use_by,2025-12-11,Milk,,-10292.25,1,1,-142.74791666666667,0.0,100.0,True,UNSAFE
+G016,Pasta Salad,2025-12-07 15:00:00,5.3,8,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10323.0,1,1,-143.175,0.0,100.0,True,UNSAFE
+G017,Beef Stew,2025-12-04 17:30:00,4.0,50,use_by,2025-12-07,"Beef, potatoes, broth, onions",,-10253.5,1,1,-142.20972222222224,0.0,100.0,True,UNSAFE
+G018,Tomato Soup,2025-12-08 12:00:00,5.5,14,use_by,2025-12-12,"Tomatoes, cream, basil",,-10344.0,1,1,-143.46666666666667,0.0,100.0,True,UNSAFE
+G020,Green Salad,2025-12-09 11:00:00,5.1,5,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10367.0,1,1,-143.78611111111113,0.0,100.0,True,UNSAFE
+G021,Cooked Rice,2025-12-10 08:00:00,4.3,16,use_by,2025-12-12,"Rice, salt, oil",,-10388.0,1,1,-144.07777777777778,0.0,100.0,True,UNSAFE
+G022,Chicken Curry,2025-12-10 12:30:00,6.4,11,use_by,2025-12-13,"Chicken, spices, yoghurt",,-10392.5,1,1,-144.14027777777778,0.0,100.0,True,UNSAFE
+G024,Milk Pack,2025-12-08 09:10:00,4.9,42,use_by,2025-12-13,Milk,,-10341.166666666666,1,1,-143.42731481481482,0.0,100.0,True,UNSAFE
+G026,Pasta Salad,2025-12-11 14:00:00,4.2,7,use_by,2025-12-13,"Pasta, mayo, peas, carrots",,-10418.0,1,1,-144.49444444444447,0.0,100.0,True,UNSAFE
+G027,Beef Stew,2025-12-08 19:00:00,3.7,46,use_by,2025-12-11,"Beef, potatoes, broth, onions",,-10351.0,1,1,-143.5638888888889,0.0,100.0,True,UNSAFE
+G028,Tomato Soup,2025-12-12 11:00:00,5.2,10,use_by,2025-12-16,"Tomatoes, cream, basil",,-10439.0,1,1,-144.78611111111113,0.0,100.0,True,UNSAFE
+G030,Green Salad,2025-12-13 10:15:00,4.6,3,use_by,2025-12-14,"Lettuce, spinach, cucumber",,-10462.25,1,1,-145.10902777777778,0.0,100.0,True,UNSAFE
+G031,Cooked Rice,2025-12-14 08:45:00,4.0,19,use_by,2025-12-16,"Rice, salt, oil",,-10484.75,1,1,-145.42152777777778,0.0,100.0,True,UNSAFE
+G032,Chicken Curry,2025-12-14 13:00:00,6.2,9,use_by,2025-12-17,"Chicken, spices, yoghurt",,-10489.0,1,1,-145.48055555555555,0.0,100.0,True,UNSAFE
+G034,Milk Pack,2025-12-12 09:20:00,4.5,38,use_by,2025-12-17,Milk,,-10437.333333333334,1,1,-144.76296296296297,0.0,100.0,True,UNSAFE
+G036,Pasta Salad,2025-12-15 14:30:00,5.1,5,use_by,2025-12-17,"Pasta, mayo, peas, carrots",,-10514.5,1,1,-145.83472222222224,0.0,100.0,True,UNSAFE
+G037,Beef Stew,2025-12-12 18:30:00,4.1,44,use_by,2025-12-15,"Beef, potatoes, broth, onions",,-10446.5,1,1,-144.89027777777778,0.0,100.0,True,UNSAFE
+G038,Tomato Soup,2025-12-16 12:00:00,5.4,15,use_by,2025-12-20,"Tomatoes, cream, basil",,-10536.0,1,1,-146.13333333333335,0.0,100.0,True,UNSAFE
+G040,Green Salad,2025-12-17 10:30:00,4.9,6,use_by,2025-12-18,"Lettuce, spinach, cucumber",,-10558.5,1,1,-146.44583333333335,0.0,100.0,True,UNSAFE
+G041,Cooked Rice,2025-12-18 08:15:00,4.2,17,use_by,2025-12-20,"Rice, salt, oil",,-10580.25,1,1,-146.74791666666667,0.0,100.0,True,UNSAFE
+G042,Chicken Curry,2025-12-18 12:45:00,6.5,10,use_by,2025-12-21,"Chicken, spices, yoghurt",,-10584.75,1,1,-146.81041666666667,0.0,100.0,True,UNSAFE
+G044,Milk Pack,2025-12-16 08:50:00,4.7,41,use_by,2025-12-21,Milk,,-10532.833333333334,1,1,-146.08935185185186,0.0,100.0,True,UNSAFE
+G046,Pasta Salad,2025-12-19 14:45:00,4.8,9,use_by,2025-12-21,"Pasta, mayo, peas, carrots",,-10610.75,1,1,-147.17152777777778,0.0,100.0,True,UNSAFE
+G047,Beef Stew,2025-12-16 19:15:00,3.8,47,use_by,2025-12-19,"Beef, potatoes, broth, onions",,-10543.25,1,1,-146.23402777777778,0.0,100.0,True,UNSAFE
+G048,Tomato Soup,2025-12-20 11:45:00,5.1,13,use_by,2025-12-24,"Tomatoes, cream, basil",,-10631.75,1,1,-147.46319444444447,0.0,100.0,True,UNSAFE
+G050,Green Salad,2025-12-21 10:45:00,5.0,4,use_by,2025-12-22,"Lettuce, spinach, cucumber",,-10654.75,1,1,-147.7826388888889,0.0,100.0,True,UNSAFE
+G051,Cooked Rice,2025-12-22 08:30:00,4.1,18,use_by,2025-12-24,"Rice, salt, oil",,-10676.5,1,1,-148.08472222222224,0.0,100.0,True,UNSAFE
+G052,Chicken Curry,2025-12-22 13:15:00,6.3,11,use_by,2025-12-25,"Chicken, spices, yoghurt",,-10681.25,1,1,-148.15069444444447,0.0,100.0,True,UNSAFE
+G054,Milk Pack,2025-12-20 09:30:00,4.3,37,use_by,2025-12-25,Milk,,-10629.5,1,1,-147.43194444444447,0.0,100.0,True,UNSAFE
+G056,Pasta Salad,2025-12-23 15:00:00,5.0,6,use_by,2025-12-25,"Pasta, mayo, peas, carrots",,-10707.0,1,1,-148.50833333333335,0.0,100.0,True,UNSAFE
+G057,Beef Stew,2025-12-20 18:45:00,3.9,45,use_by,2025-12-23,"Beef, potatoes, broth, onions",,-10638.75,1,1,-147.56041666666667,0.0,100.0,True,UNSAFE
+G058,Tomato Soup,2025-12-24 12:15:00,5.3,16,use_by,2025-12-28,"Tomatoes, cream, basil",,-10728.25,1,1,-148.80347222222224,0.0,100.0,True,UNSAFE
+G060,Green Salad,2025-12-25 10:00:00,4.7,5,use_by,2025-12-26,"Lettuce, spinach, cucumber",,-10750.0,1,1,-149.10555555555555,0.0,100.0,True,UNSAFE
+G061,Cooked Rice,2025-12-26 09:00:00,4.0,20,use_by,2025-12-28,"Rice, salt, oil",,-10773.0,1,1,-149.425,0.0,100.0,True,UNSAFE
+G062,Chicken Curry,2025-12-26 13:45:00,6.6,12,use_by,2025-12-29,"Chicken, spices, yoghurt",,-10777.75,1,1,-149.49097222222224,0.0,100.0,True,UNSAFE
+G064,Milk Pack,2025-12-24 10:00:00,4.6,39,use_by,2025-12-29,Milk,,-10726.0,1,1,-148.77222222222224,0.0,100.0,True,UNSAFE
+G066,Pasta Salad,2025-12-27 15:30:00,4.9,7,use_by,2025-12-29,"Pasta, mayo, peas, carrots",,-10803.5,1,1,-149.84861111111113,0.0,100.0,True,UNSAFE
+G067,Beef Stew,2025-12-24 19:30:00,4.2,43,use_by,2025-12-27,"Beef, potatoes, broth, onions",,-10735.5,1,1,-148.90416666666667,0.0,100.0,True,UNSAFE
+G068,Tomato Soup,2025-12-28 12:30:00,5.6,14,use_by,2026-01-01,"Tomatoes, cream, basil",,-10824.5,1,1,-150.14027777777778,0.0,100.0,True,UNSAFE
+G070,Green Salad,2025-12-29 11:15:00,4.5,4,use_by,2025-12-30,"Lettuce, spinach, cucumber",,-10847.25,1,1,-150.45625,0.0,100.0,True,UNSAFE
+G071,Cooked Rice,2025-12-30 08:30:00,4.1,18,use_by,2026-01-01,"Rice, salt, oil",,-10868.5,1,1,-150.7513888888889,0.0,100.0,True,UNSAFE
+G072,Chicken Curry,2025-12-30 13:00:00,6.0,10,use_by,2026-01-02,"Chicken, spices, yoghurt",,-10873.0,1,1,-150.8138888888889,0.0,100.0,True,UNSAFE
+G074,Milk Pack,2025-12-28 09:20:00,4.4,40,use_by,2026-01-02,Milk,,-10821.333333333334,1,1,-150.09629629629632,0.0,100.0,True,UNSAFE
+G076,Pasta Salad,2025-12-31 14:15:00,5.2,8,use_by,2026-01-02,"Pasta, mayo, peas, carrots",,-10898.25,1,1,-151.16458333333335,0.0,100.0,True,UNSAFE
+G077,Beef Stew,2025-12-28 18:15:00,4.0,46,use_by,2025-12-31,"Beef, potatoes, broth, onions",,-10830.25,1,1,-150.2201388888889,0.0,100.0,True,UNSAFE
+G078,Tomato Soup,2026-01-01 12:00:00,5.0,12,use_by,2026-01-05,"Tomatoes, cream, basil",,-10920.0,1,1,-151.46666666666667,0.0,100.0,True,UNSAFE
+G080,Green Salad,2026-01-02 10:30:00,4.8,6,use_by,2026-01-03,"Lettuce, spinach, cucumber",,-10942.5,1,1,-151.77916666666667,0.0,100.0,True,UNSAFE
+G081,Cooked Rice,2025-12-05 09:00:00,4.1,18,use_by,2025-12-07,"Rice, salt, oil",,-10269.0,1,1,-142.425,0.0,100.0,True,UNSAFE
+G082,Chicken Curry,2025-12-05 13:00:00,5.8,11,use_by,2025-12-08,"Chicken, spices, yoghurt",,-10273.0,1,1,-142.48055555555555,0.0,100.0,True,UNSAFE
+G084,Milk Pack,2025-12-06 10:00:00,3.9,34,use_by,2025-12-11,Milk,,-10294.0,1,1,-142.77222222222224,0.0,100.0,True,UNSAFE
+G086,Pasta Salad,2025-12-07 15:00:00,4.6,8,use_by,2025-12-09,"Pasta, mayo, peas, carrots",,-10323.0,1,1,-143.175,0.0,100.0,True,UNSAFE
+G087,Beef Stew,2025-12-03 19:00:00,4.0,42,use_by,2025-12-06,"Beef, potatoes, broth, onions",,-10231.0,1,1,-141.89722222222224,0.0,100.0,True,UNSAFE
+G088,Tomato Soup,2025-12-08 12:30:00,5.2,14,use_by,2025-12-12,"Tomatoes, cream, basil",,-10344.5,1,1,-143.47361111111113,0.0,100.0,True,UNSAFE
+G090,Green Salad,2025-12-09 11:30:00,4.9,5,use_by,2025-12-10,"Lettuce, spinach, cucumber",,-10367.5,1,1,-143.79305555555555,0.0,100.0,True,UNSAFE
+G091,Cooked Rice,2025-12-10 09:15:00,4.3,20,use_by,2025-12-12,"Rice, salt, oil",,-10389.25,1,1,-144.0951388888889,0.0,100.0,True,UNSAFE
+G092,Chicken Curry,2025-12-10 14:00:00,6.2,12,use_by,2025-12-13,"Chicken, spices, yoghurt",,-10394.0,1,1,-144.16111111111113,0.0,100.0,True,UNSAFE
+G094,Milk Pack,2025-12-08 10:15:00,4.5,39,use_by,2025-12-13,Milk,,-10342.25,1,1,-143.44236111111113,0.0,100.0,True,UNSAFE
+G096,Pasta Salad,2025-12-11 15:30:00,5.0,7,use_by,2025-12-13,"Pasta, mayo, peas, carrots",,-10419.5,1,1,-144.51527777777778,0.0,100.0,True,UNSAFE
+G097,Beef Stew,2025-12-08 20:00:00,3.8,45,use_by,2025-12-11,"Beef, potatoes, broth, onions",,-10352.0,1,1,-143.57777777777778,0.0,100.0,True,UNSAFE
+G098,Tomato Soup,2025-12-12 13:00:00,5.4,13,use_by,2025-12-16,"Tomatoes, cream, basil",,-10441.0,1,1,-144.8138888888889,0.0,100.0,True,UNSAFE
+G100,Green Salad,2025-12-13 11:45:00,4.7,4,use_by,2025-12-14,"Lettuce, spinach, cucumber",,-10463.75,1,1,-145.12986111111113,0.0,100.0,True,UNSAFE
+G101,Cooked Rice,2025-12-14 09:30:00,4.2,17,use_by,2025-12-16,"Rice, salt, oil",,-10485.5,1,1,-145.43194444444447,0.0,100.0,True,UNSAFE
+G102,Chicken Curry,2025-12-14 14:15:00,6.5,10,use_by,2025-12-17,"Chicken, spices, yoghurt",,-10490.25,1,1,-145.49791666666667,0.0,100.0,True,UNSAFE
+G104,Milk Pack,2025-12-12 10:30:00,4.8,42,use_by,2025-12-17,Milk,,-10438.5,1,1,-144.77916666666667,0.0,100.0,True,UNSAFE
+G106,Pasta Salad,2025-12-15 16:00:00,5.3,6,use_by,2025-12-17,"Pasta, mayo, peas, carrots",,-10516.0,1,1,-145.85555555555555,0.0,100.0,True,UNSAFE
+G107,Beef Stew,2025-12-12 20:30:00,4.1,48,use_by,2025-12-15,"Beef, potatoes, broth, onions",,-10448.5,1,1,-144.91805555555555,0.0,100.0,True,UNSAFE
+G108,Tomato Soup,2025-12-16 13:30:00,5.5,15,use_by,2025-12-20,"Tomatoes, cream, basil",,-10537.5,1,1,-146.15416666666667,0.0,100.0,True,UNSAFE
+G110,Green Salad,2025-12-17 11:15:00,4.9,5,use_by,2025-12-18,"Lettuce, spinach, cucumber",,-10559.25,1,1,-146.45625,0.0,100.0,True,UNSAFE
+G111,Cooked Rice,2025-12-18 09:45:00,4.0,19,use_by,2025-12-20,"Rice, salt, oil",,-10581.75,1,1,-146.76875,0.0,100.0,True,UNSAFE
+G112,Chicken Curry,2025-12-18 13:30:00,6.1,11,use_by,2025-12-21,"Chicken, spices, yoghurt",,-10585.5,1,1,-146.82083333333335,0.0,100.0,True,UNSAFE
+G114,Milk Pack,2025-12-16 09:40:00,4.6,38,use_by,2025-12-21,Milk,,-10533.666666666666,1,1,-146.10092592592594,0.0,100.0,True,UNSAFE
+G116,Pasta Salad,2025-12-19 15:15:00,4.7,9,use_by,2025-12-21,"Pasta, mayo, peas, carrots",,-10611.25,1,1,-147.17847222222224,0.0,100.0,True,UNSAFE
+G117,Beef Stew,2025-12-16 20:45:00,3.9,44,use_by,2025-12-19,"Beef, potatoes, broth, onions",,-10544.75,1,1,-146.25486111111113,0.0,100.0,True,UNSAFE
+G118,Tomato Soup,2025-12-20 12:15:00,5.1,12,use_by,2025-12-24,"Tomatoes, cream, basil",,-10632.25,1,1,-147.4701388888889,0.0,100.0,True,UNSAFE
+G120,Green Salad,2025-12-21 11:30:00,5.0,3,use_by,2025-12-22,"Lettuce, spinach, cucumber",,-10655.5,1,1,-147.79305555555555,0.0,100.0,True,UNSAFE
+G121,Cooked Rice,2025-12-22 09:15:00,4.2,18,use_by,2025-12-24,"Rice, salt, oil",,-10677.25,1,1,-148.0951388888889,0.0,100.0,True,UNSAFE
+G122,Chicken Curry,2025-12-22 14:00:00,6.4,10,use_by,2025-12-25,"Chicken, spices, yoghurt",,-10682.0,1,1,-148.16111111111113,0.0,100.0,True,UNSAFE
+G124,Milk Pack,2025-12-20 10:15:00,4.3,41,use_by,2025-12-25,Milk,,-10630.25,1,1,-147.44236111111113,0.0,100.0,True,UNSAFE
+G126,Pasta Salad,2025-12-23 16:30:00,5.2,7,use_by,2025-12-25,"Pasta, mayo, peas, carrots",,-10708.5,1,1,-148.52916666666667,0.0,100.0,True,UNSAFE
+G127,Beef Stew,2025-12-20 20:15:00,4.0,46,use_by,2025-12-23,"Beef, potatoes, broth, onions",,-10640.25,1,1,-147.58125,0.0,100.0,True,UNSAFE
+G128,Tomato Soup,2025-12-24 13:45:00,5.3,16,use_by,2025-12-28,"Tomatoes, cream, basil",,-10729.75,1,1,-148.82430555555555,0.0,100.0,True,UNSAFE
+G130,Green Salad,2025-12-25 11:45:00,4.6,5,use_by,2025-12-26,"Lettuce, spinach, cucumber",,-10751.75,1,1,-149.12986111111113,0.0,100.0,True,UNSAFE
+G131,Cooked Rice,2025-12-26 10:15:00,4.1,20,use_by,2025-12-28,"Rice, salt, oil",,-10774.25,1,1,-149.44236111111113,0.0,100.0,True,UNSAFE
+G132,Chicken Curry,2025-12-26 15:00:00,6.7,12,use_by,2025-12-29,"Chicken, spices, yoghurt",,-10779.0,1,1,-149.50833333333335,0.0,100.0,True,UNSAFE
+G134,Milk Pack,2025-12-24 11:30:00,4.5,40,use_by,2025-12-29,Milk,,-10727.5,1,1,-148.79305555555555,0.0,100.0,True,UNSAFE
+G136,Pasta Salad,2025-12-27 17:00:00,5.0,8,use_by,2025-12-29,"Pasta, mayo, peas, carrots",,-10805.0,1,1,-149.86944444444447,0.0,100.0,True,UNSAFE
+G137,Beef Stew,2025-12-24 21:00:00,4.2,43,use_by,2025-12-27,"Beef, potatoes, broth, onions",,-10737.0,1,1,-148.925,0.0,100.0,True,UNSAFE
+G138,Tomato Soup,2025-12-28 14:30:00,5.4,14,use_by,2026-01-01,"Tomatoes, cream, basil",,-10826.5,1,1,-150.16805555555555,0.0,100.0,True,UNSAFE
+G140,Green Salad,2025-12-29 12:45:00,4.4,4,use_by,2025-12-30,"Lettuce, spinach, cucumber",,-10848.75,1,1,-150.47708333333335,0.0,100.0,True,UNSAFE
+G141,Cooked Rice,2025-12-30 09:45:00,4.2,18,use_by,2026-01-01,"Rice, salt, oil",,-10869.75,1,1,-150.76875,0.0,100.0,True,UNSAFE
+G142,Chicken Curry,2025-12-30 14:30:00,6.1,10,use_by,2026-01-02,"Chicken, spices, yoghurt",,-10874.5,1,1,-150.83472222222224,0.0,100.0,True,UNSAFE
+G144,Milk Pack,2025-12-28 10:45:00,4.7,42,use_by,2026-01-02,Milk,,-10822.75,1,1,-150.11597222222224,0.0,100.0,True,UNSAFE
+G146,Pasta Salad,2025-12-31 16:30:00,5.3,6,use_by,2026-01-02,"Pasta, mayo, peas, carrots",,-10900.5,1,1,-151.19583333333335,0.0,100.0,True,UNSAFE
+G147,Beef Stew,2025-12-28 22:00:00,4.0,47,use_by,2025-12-31,"Beef, potatoes, broth, onions",,-10834.0,1,1,-150.27222222222224,0.0,100.0,True,UNSAFE
+G148,Tomato Soup,2026-01-01 13:15:00,5.1,12,use_by,2026-01-05,"Tomatoes, cream, basil",,-10921.25,1,1,-151.48402777777778,0.0,100.0,True,UNSAFE
+G150,Green Salad,2026-01-02 12:00:00,4.8,6,use_by,2026-01-03,"Lettuce, spinach, cucumber",,-10944.0,1,1,-151.8,0.0,100.0,True,UNSAFE
