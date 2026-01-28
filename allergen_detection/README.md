@@ -1,163 +1,162 @@
 Allergen Detection
+Purpose
 
-Rule based allergen identification and risk flagging
+The Allergen Detection module is designed to identify potential allergen risks from ingredient text and surface them as clear, interpretable safety signals.
 
-Purpose of this module
+Its purpose is to support consumer safety and informed decision making, particularly for individuals with food allergies, by flagging known allergens early in the data pipeline.
 
-This module is designed to help identify potential allergen risks from ingredient and label text and surface them clearly to users.
+This module answers a straightforward but critical question:
 
-Food allergens represent a high risk domain, where false negatives can have serious consequences. For that reason, this module is intentionally conservative and prioritises clarity and reliability over cleverness or model complexity.
+Does this food item contain ingredients that may pose an allergen risk?
 
-The goal is not to infer or predict allergies, but to flag known allergen indicators so that users can make informed decisions.
+Design Philosophy
 
-Why allergen detection is handled separately
+Allergen detection is a safety critical problem where false negatives are unacceptable.
 
-I designed allergen detection as a standalone module, rather than folding it into the ML freshness model or OCR logic.
+Rather than using probabilistic or opaque models, this module deliberately adopts a rule based approach that is:
 
-Allergen risk is:
+conservative
 
-not probabilistic in nature,
+explainable
 
-not suitable for optimisation based prediction,
+easy to audit
 
-and often governed by explicit labelling requirements.
+The goal is not to predict sensitivity levels, but to reliably flag the presence of known allergens based on declared ingredient text.
 
-Keeping this logic separate ensures allergen handling remains:
+This mirrors how allergen handling is implemented in regulated food systems.
 
-auditable,
+Input Data
 
-easy to extend,
+Inputs to this module are unstructured ingredient lists, typically extracted from packaging or product descriptions.
 
-and independent of model behaviour.
+Examples include:
 
-Folder structure and design intent
+ingredient declarations on prepared foods
+
+packaged food labels
+
+menu style ingredient text
+
+Sample inputs are provided to demonstrate behaviour across different food types without relying on real consumer data.
+
+Allergen Profiles
+
+Known allergens are defined explicitly using keyword based profiles.
+
+These profiles represent common allergen categories such as:
+
+nuts
+
+dairy
+
+gluten
+
+soy
+
+shellfish
+
+Each category maps to a set of representative ingredient keywords.
+This design allows profiles to be:
+
+easily reviewed
+
+extended
+
+updated as regulations or requirements change
+
+Detection Logic
+
+The detection process follows a simple and transparent flow:
+
+ingredient text is normalised
+
+allergen keywords are matched deterministically
+
+detected allergens are collected
+
+a conservative risk level is assigned
+
+If any known allergen is detected, the risk level is flagged as high.
+If none are detected, the risk level is flagged as low.
+
+No attempt is made to infer severity or exposure thresholds. This is a deliberate safety decision.
+
+Outputs
+
+The module produces structured outputs including:
+
+a list of detected allergen categories
+
+a high level allergen risk flag
+
+These outputs are designed to integrate cleanly with:
+
+safety decision logic
+
+user facing warnings
+
+marketplace eligibility rules
+
+They are intentionally simple and human readable.
+
+Folder Structure
 allergen_detection/
-│
-├── profiles/
-├── parser/
+├── profiles/         # Allergen keyword definitions
+├── parser/           # Ingredient text parsing and detection logic
+├── samples_inputs/   # Sample ingredient text inputs
+├── run_allergen_detection.py
 └── README.md
 
 
-Each folder reflects a specific responsibility within the allergen detection flow.
+Each component has a single responsibility, keeping the module easy to understand and maintain.
 
-profiles/ — structured allergen knowledge
+Terminal Execution
 
-This folder contains structured representations of known allergens.
+The module can be executed directly from the command line to demonstrate behaviour.
 
-What is included
+Running the script prints:
 
-common allergen names (e.g. milk, peanuts, shellfish),
+the raw ingredient text
 
-known variations and synonyms,
+detected allergen categories
 
-grouped categories for easier extension.
+the resulting risk flag
 
-Why this matters
+This makes the detection logic easy to inspect, test, and explain without additional tooling.
 
-Instead of hard coding allergen terms into logic, I externalised them into profiles to ensure:
+Role Within the Overall System
 
-easier updates,
+The Allergen Detection module provides supporting safety signals to the wider system.
 
-clearer review,
+Its outputs can:
 
-reduced risk of hidden logic errors.
+inform safety decisions
 
-This approach mirrors how domain knowledge is typically managed in safety sensitive systems.
+trigger user visible warnings
 
-parser/ — interpreting ingredient text
+restrict marketplace listings where appropriate
 
-The parser processes ingredient and label text to identify allergen indicators.
+It does not override freshness or expiry logic. Instead, it complements them by addressing a different dimension of food safety.
 
-What the parser does
+Why This Matters
 
-normalises text for comparison,
+Food allergies are a significant public health concern, and allergen mislabelling is a common source of risk.
 
-scans for allergen keywords and variants,
+This module demonstrates how:
 
-applies simple contextual checks where appropriate.
+simple, well designed rules can meaningfully reduce risk
 
-The parser does not attempt semantic inference or language modelling. Its role is to reliably surface explicit signals, not guess intent.
+safety logic can be made transparent and auditable
 
-Risk flagging logic
+ethical considerations can be embedded directly into system design
 
-When allergen indicators are detected, the module:
+It highlights the importance of responsible data use in consumer facing systems.
 
-flags the allergen clearly,
+Reflection
 
-associates it with the relevant ingredient or label section,
+This module reflects a cautious, safety first engineering mindset.
 
-passes the information forward as a risk signal, not a decision.
+Rather than optimising for sophistication, the focus is on reliability, clarity, and trust. All assumptions are explicit, and detection logic is easy to reason about.
 
-The output is intentionally simple so it can be:
+The Allergen Detection module shows how responsible AI and data systems often rely on clear rules and strong defaults, especially in safety critical domains.
 
-displayed directly to users,
-
-consumed by downstream safety logic,
-
-audited without ambiguity.
-
-Why this module is rule based
-
-I deliberately avoided machine learning or deep NLP for allergen detection.
-
-The reasons are practical:
-
-rule based logic is predictable,
-
-failures are easier to identify,
-
-updates can be reviewed without retraining models,
-
-conservative behaviour is easier to guarantee.
-
-In allergen handling, missing a known allergen is far worse than over flagging. The design reflects that reality.
-
-Handling uncertainty and limitations
-
-This module is designed to fail safely.
-
-If:
-
-text is incomplete,
-
-formatting is unclear,
-
-or confidence is low,
-
-the system errs on the side of flagging potential risk rather than suppressing warnings.
-
-The module does not claim completeness or medical authority. It is a support tool, not a diagnostic system.
-
-Reflection and trade offs
-
-Several trade offs were made consciously:
-
-I prioritised reliability over language coverage.
-
-I accepted higher false positives to reduce false negatives.
-
-I avoided complex NLP to maintain auditability.
-
-If extended, this module could:
-
-incorporate multilingual ingredient lists,
-
-align with jurisdiction specific allergen regulations,
-
-integrate confidence scores for UI presentation.
-
-These would be incremental improvements rather than structural changes.
-
-Why this module matters
-
-This module demonstrates:
-
-responsible handling of high risk information,
-
-separation between knowledge and logic,
-
-conservative system design,
-
-respect for real world consequences of errors.
-
-It reinforces the overall system’s emphasis on safety, transparency, and trust, and complements the ML and OCR components by grounding them in explicit domain rules.
