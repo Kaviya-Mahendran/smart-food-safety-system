@@ -1,152 +1,144 @@
-Surplus Food Marketplace (Prototype)
+Surplus Food Marketplace
 
-Safety constrained redistribution of surplus food
+Purpose
 
-Purpose of this module
+The Surplus Food Marketplace module represents the product layer of the Smart Food Safety System.
 
-This module explores how surplus food could be redistributed without compromising safety, using the outputs of the wider system rather than ignoring them.
+Its purpose is to demonstrate how safety approved intelligence can be translated into real world marketplace behaviour that reduces food waste without compromising consumer safety.
 
-Surplus food platforms often focus on logistics and pricing while relying on minimal safety checks. This module was designed to test a different assumption:
-surplus redistribution should be impossible unless safety criteria are met by design.
+This module answers a practical question:
 
-The result is a prototype marketplace concept that does not optimise for volume, but for trust, compliance, and consumer protection.
+Which food items can be offered for resale or redistribution, under what conditions, and with what restrictions?
 
-Why this is a prototype, not a full application
+It does not generate safety decisions itself. It consumes structured outputs from upstream safety and freshness layers and applies transparent, business facing rules.
 
-I deliberately kept this module at the prototype level.
+Design Philosophy
 
-The intention is to:
+In real food rescue and surplus platforms, safety decisions must always take priority over commercial incentives.
 
-demonstrate product logic,
+This module is designed with a strict hierarchy:
 
-show how safety rules translate into user facing constraints,
+Safety decisions are enforced upstream
 
-and surface design trade offs clearly.
+The marketplace never overrides safety outcomes
 
-This is not a deployment or monetisation exercise. It is a design proof that connects data outputs to real world decisions.
+Commercial logic is applied only to items already deemed acceptable
 
-Folder structure and intent
+This separation ensures that:
+
+unsafe food is never listed
+
+borderline food is handled cautiously
+
+business logic remains explainable and auditable
+
+The result is a marketplace that is safety first by design.
+
+Inputs
+
+The marketplace consumes a curated, structured dataset produced by the Safety Decision Layer.
+
+Key inputs include:
+
+Freshness score
+
+Safety decision (Safe, Eat Soon, Unsafe)
+
+Expiry status
+
+Basic item identifiers and food type
+
+For this project, a representative sample dataset is used to demonstrate how the marketplace behaves when receiving safety approved inputs.
+
+This approach keeps the focus on system design and decision logic rather than data volume.
+
+Marketplace Decision Logic
+
+Marketplace behaviour is derived directly from the safety classification.
+
+The logic is intentionally simple and explicit:
+
+Items marked Safe are listed normally
+
+Items marked Eat Soon are listed with urgency indicators and discounting
+
+Items marked Unsafe are automatically rejected and never shown to users
+
+These rules are implemented as a dedicated, reusable logic layer. They do not depend on machine learning and do not reinterpret safety signals.
+
+This mirrors real world platforms where compliance and trust are critical.
+
+Outputs
+
+The primary output of this module is a marketplace ready dataset that includes:
+
+Listing eligibility
+
+Listing type (standard, urgent, rejected)
+
+Discount indicators for urgent items
+
+This dataset represents a clear contract between safety intelligence and product behaviour, making the system easy to extend into dashboards, APIs, or mobile applications.
+
+Folder Structure
 surplus_food_marketplace/
-│
-├─ prototypes/
-├─ ui_mockups/
-├─ logic/
-└─ README.md
+├── data/          # Marketplace ready sample datasets
+├── logic/         # Marketplace decision rules and loaders
+├── prototypes/    # Interaction flow descriptions
+├── ui_mockups/    # Visual mockups illustrating user experience
+└── README.md
 
 
-Each folder reflects a different layer of product thinking.
+Each subfolder represents a different aspect of how safety intelligence becomes a usable product.
 
-prototypes/ — conceptual flows
+Prototypes and UI Mockups
 
-This folder contains high level representations of how surplus food would move through the system.
+This module includes low fidelity prototypes and UI mockups to help non technical stakeholders visualise system behaviour.
 
-What is captured
+The mockups illustrate:
 
-item eligibility checks,
+Consumer views showing freshness scores and safety badges
 
-safety gatekeeping logic,
+Urgent items highlighted with discounts
 
-transitions between states (eligible, restricted, rejected).
+Unsafe items excluded from listings
 
-These prototypes focus on decision flow, not visual polish.
+Admin style views showing listing eligibility and rejection reasons
 
-ui_mockups/ — user facing communication
+These artefacts are intentionally simple and focus on clarity over polish.
 
-The mockups show how information would be presented to users.
+Role Within the Overall System
 
-Key elements displayed
+This module sits downstream of:
 
-Freshness Score,
+Freshness Scoring
 
-safety classification,
+Safety Decision Logic
 
-allergen warnings,
+Allergen and label risk signals
 
-eligibility status.
+It does not modify or reinterpret those signals. Instead, it translates them into marketplace actions that are consistent, predictable, and compliant.
 
-The design prioritises:
+This design ensures the system remains modular and easy to audit.
 
-clarity over density,
+Why This Matters
 
-warnings over persuasion,
+Food waste reduction systems often fail because they prioritise recovery over safety or rely on manual judgement.
 
-and comprehension over aesthetics.
+This module demonstrates how:
 
-This reflects how safety information should be surfaced in consumer facing systems.
+automated safety intelligence can support responsible redistribution
 
-logic/ — enforcement, not suggestion
+risk can be communicated clearly to consumers
 
-This folder contains the logic that enforces safety constraints.
+surplus food can be handled without lowering safety standards
 
-Examples of enforced rules
+It shows how data driven systems can enable sustainable outcomes while preserving trust.
 
-items marked Unsafe cannot be listed,
+Reflection
 
-items near expiry may be restricted or time limited,
+This module reflects my approach to product oriented data systems.
 
-allergen risks are always displayed and never suppressed.
+Rather than stopping at analytics or modelling, the focus is on how intelligence changes behaviour in a real application. Safety decisions are respected, user trust is prioritised, and business logic remains transparent.
 
-Crucially, this logic does not negotiate with the ML score.
-If a rule blocks an item, it stays blocked.
-
-How this module uses upstream signals
-
-This marketplace consumes outputs from:
-
-the freshness scoring model,
-
-the label scanner,
-
-allergen detection,
-
-ETL validation flags.
-
-It does not reinterpret these signals. It respects them.
-
-This separation ensures that product incentives cannot override safety logic.
-
-Why safety is enforced at the product layer
-
-Even the best data systems can fail if product design allows users to bypass safeguards.
-
-By enforcing safety at the marketplace level:
-
-unsafe behaviour is prevented by default,
-
-trust does not depend on user vigilance,
-
-and responsibility is shared by system design.
-
-This reflects how regulated systems typically operate.
-
-Reflection and trade offs
-
-Several deliberate trade offs were made:
-
-I accepted reduced resale volume to preserve safety.
-
-I prioritised blocking behaviour over warning only messaging.
-
-I chose not to include pricing or optimisation logic, as it distracts from safety goals.
-
-If extended, this module could explore:
-
-partnerships with regulated food charities,
-
-audit logs for rejected items,
-
-alignment with local food safety enforcement workflows.
-
-Why this module matters
-
-This module demonstrates:
-
-product thinking grounded in real constraints,
-
-respect for safety and regulation,
-
-the ability to translate data outputs into enforceable decisions,
-
-understanding that responsibility extends beyond modelling.
-
-It completes the system by showing how data, rules, and ethics come together at the point where real people are affected.
+The Surplus Food Marketplace demonstrates how technical systems can be designed to create measurable social impact without compromising responsibility.
