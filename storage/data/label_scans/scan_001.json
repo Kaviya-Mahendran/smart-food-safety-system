@@ -1,0 +1,11 @@
+{
+  "scanId": "scan_001",
+  "scannedAt": "2026-02-04T15:58:41.169Z",
+  "ocrText": "Contains milk and nuts",
+  "allergensDetected": [
+    "milk",
+    "nuts"
+  ],
+  "expiryDate": "2026-02-10",
+  "riskLevel": "high"
+}
