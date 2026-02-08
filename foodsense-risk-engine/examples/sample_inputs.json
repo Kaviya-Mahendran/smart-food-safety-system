@@ -1,0 +1,7 @@
+{
+  "expiry_type": "best_before",
+  "expiry_date": "2026-01-10T00:00:00",
+  "prep_datetime": "2026-01-09T14:00:00",
+  "storage_type": "ambient",
+  "allergen_detected": false
+}
