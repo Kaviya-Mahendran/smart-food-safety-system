@@ -197,6 +197,8 @@ Supporting technical writing and public sharing
 
 Screenshots of engagement added to /docs
 
+App Prototype: https://food-sense--rejoiceinthelor.replit.app
+
 Final Note
 
 This repository represents deliberate, original work focused on:
