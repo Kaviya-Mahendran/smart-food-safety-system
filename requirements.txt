@@ -1,0 +1,3 @@
+# The project currently uses lightweight Python components.
+# Add module-specific dependencies here as the implementation is formalised.
+pytest>=8
