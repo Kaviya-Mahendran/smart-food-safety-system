@@ -73,6 +73,11 @@ The repository contains example inputs and outputs demonstrating system behaviou
 
 No performance number is presented unless it can be reproduced from the repository.
 
+## Visual assets
+
+- [UI mockups](./surplus_food_marketplace/ui_mockups/) — product-facing screens for safety, freshness, allergen and marketplace flows.
+- [Architecture documentation](./docs/) — supporting system and design artefacts.
+
 ## Reproduce locally
 
 ```bash
